@@ -1,59 +1,109 @@
-html, body{
+html, body {
     background-color: rgb(243, 243, 243);
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.nombre{
-    background-color: blue;
-    color: white;
+header {
+    background-color: #0000ff;
+    padding: 30px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    margin: 0;
-    box-sizing: border-box;
-    padding: 30px;
-    width: 100vw;
+}
+
+.nombre {
+    color: white;
     font-size: 50px;
     text-align: center;
+    margin: 0;
+}
+
+.search-section {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+input {
+    padding: 10px 20px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 30px 0 0 30px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+}
+
+.novedades-section {
+    padding: 0 20px;
+}
+
+.novedades {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.custom-carousel {
+    margin-bottom: 70px;
+    margin-top: 30px; 
+    margin-left: 120px;
+    margin-right: 120px;
 }
 
 footer.navbar {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     background-color: white;
     border-top: 1px solid #ccc;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
 }
 
 footer .contenido {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-}
-
-footer .lista {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
     width: 100%;
-    justify-content: space-around;
 }
 
 footer .item {
-    text-align: center;
     flex: 1;
+    text-align: center;
+}
+
+footer .lista {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 footer .item a {
-    text-decoration: none;
-    color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 14px;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    padding: 10px 0;
+    width: 100%;
 }
 
 footer .item a i {
@@ -82,8 +132,7 @@ footer .item a.active {
     color: blue;
 }
 
-
-
-
-
-
+main {
+    flex: 1;
+    padding-bottom: 90px;
+}
