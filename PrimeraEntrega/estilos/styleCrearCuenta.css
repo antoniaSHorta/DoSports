@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.input-error::placeholder {
+    color: red;
+}
+body{
+    background-color: rgb(243, 243, 243);
+}
+
+header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: blue;
+    border-bottom-left-radius: 30px; 
+    border-bottom-right-radius: 30px;
+    justify-content: center;
+}
+
+header h1{
+    color: #fff;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    margin-top: 300px;
+}
+.nombre {
+    background-color: blue;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+    font-size: 50px;
+    border-bottom-left-radius: 30px; 
+    border-bottom-right-radius: 30px;
+    width: 100vw; 
+    box-sizing: border-box; 
+}
+
+.principal{
+    width: 400px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 60px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+form .campo{
+    height: 52px;
+    margin: 18px 0;
+}
+
+.campo input{
+    height: 100%;
+    width: 100%;
+    border: 1px solid silver;
+    outline: none;
+    font-size: 17px;
+    padding: 0 17px;
+    border-radius: 8px;
+    font-weight: 400;
+}
+
+.terminos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+label{
+    font-size: 14px;
+    font-weight: 500;
+    color: #707070;
+}
+
+.btn{
+    width: 100%;
+    padding: 10px;
+    color:white;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    background: blue;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login h4{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+a.hover{
+    text-decoration: underline;
+}

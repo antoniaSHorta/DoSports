@@ -1,0 +1,87 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(243, 243, 243);
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.nombre {
+    background-color: blue;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+    font-size: 50px;
+    border-bottom-left-radius: 30px; 
+    border-bottom-right-radius: 30px;
+    width: 100vw; 
+    box-sizing: border-box; 
+}
+
+.formulario {
+    margin: auto;
+    margin-top: 100px;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+    padding: 40px;
+    width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.usuario {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.contraseña {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.usuario input,
+.contraseña input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.usuario label,
+.contraseña label {
+    position: absolute;
+    left: 10px;
+    top: -20px;
+    background: white;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #666;
+    font-size: 18px;
+}
+
+input[type="submit"] {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+input[type="submit"]:hover {
+    background-color: darkblue;
+}
+
+footer {
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+}

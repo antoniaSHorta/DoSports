@@ -1,0 +1,89 @@
+html, body{
+    background-color: rgb(243, 243, 243);
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.nombre{
+    background-color: blue;
+    color: white;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 100vw;
+    font-size: 50px;
+    text-align: center;
+}
+
+footer.navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer .contenido {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+footer .lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+footer .item {
+    text-align: center;
+    flex: 1;
+}
+
+footer .item a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+footer .item a i {
+    font-size: 24px;
+}
+
+footer .item a span {
+    margin-top: 5px;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+footer .item a:hover {
+    color: blue;
+}
+
+footer .item a:hover i {
+    color: blue;
+}
+
+footer .item a:hover span {
+    color: blue;
+}
+
+footer .item a.active {
+    color: blue;
+}
+
+
+
+
+
+

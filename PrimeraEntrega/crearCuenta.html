@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/styleCrearCuenta.css">
+    <title>CrearCuenta</title>
+</head>
+
+<body>
+    <header>
+        <h1>DoSports</h1>
+    </header>
+    <div class="container">
+        <div class="principal">
+            <h2>Registro</h2>
+            <form action="#" id="form">
+                <div class="campo">
+                    <input type="text" placeholder="Nombre" id="nombre" >
+                </div>
+                <div class="campo">
+                    <input type="text" placeholder="Apellido" id="apellido" >
+                </div>
+                <div class="campo">
+                    <input type="text" placeholder="Rut" id="rut" >
+                </div>
+                <div class="campo">
+                    <input type="email" placeholder="Correo" id="correo" >
+                </div>
+                <div class="campo">
+                    <input type="text" placeholder="Region" id="region" >
+                </div>
+                <div class="campo">
+                    <input type="text" placeholder="Comuna" id="comuna" >
+                </div>
+                <div class="campo">
+                    <input type="password" placeholder="Contraseña" id="contraseña" >
+                </div>
+                <div class="campo">
+                    <input type="password" placeholder="Confirme contraseña" id="contraseña-copy" >
+                </div>
+                <div class="terminos">
+                    <input type="checkbox" id="check">
+                    <label for="check">Acepto los Términos y Condiciones</label>
+                </div>
+                <div class="campo">
+                    <button type="submit" class="btn">Registrar</button>
+                    <p class="warnings" id="warnings"></p>
+                </div>
+                <div class="login">
+                <h4>¿Ya tienes una tienes cuenta? <a href="inicioSesion.html">Iniciar sesión</a></h4> 
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/validacionCuenta.js"></script>
+</body>
+</html>
