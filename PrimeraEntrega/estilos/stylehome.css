@@ -16,6 +16,9 @@ header {
 }
 
 .nombre {
+    font-family: "Merriweather", sans-serif;
+    font-weight: 900;
+    font-style: normal;
     color: white;
     font-size: 50px;
     text-align: center;
@@ -23,6 +26,9 @@ header {
 }
 
 .search-section {
+    font-family: "Merriweather", sans-serif;
+    font-weight: 900;
+    font-style: normal;
     padding: 20px;
 }
 
@@ -55,6 +61,9 @@ button {
 }
 
 .novedades {
+    font-family: "Merriweather", sans-serif;
+    font-weight: 500;
+    font-style: normal;
     font-size: 30px;
     margin-bottom: 10px;
 }
@@ -62,8 +71,64 @@ button {
 .custom-carousel {
     margin-bottom: 70px;
     margin-top: 30px; 
-    margin-left: 120px;
-    margin-right: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: auto; 
+}
+
+.principalesNoticias-section {
+    padding: 0 20px;
+}
+
+.principalesNoticias{
+    font-family: "Merriweather", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.container{
+    background-color: rgba(238, 238, 238, 0.473);
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.imagenNoticia {
+    width: 100%; 
+    height: auto; 
+    max-width: 607px;
+    margin: 0 auto; 
+}
+
+.tituloNoticia {
+    margin-top: 30px;
+    font-family: "Merriweather", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+    text-align: center; 
+}
+
+.descripcionNoticia {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Merriweather", sans-serif;
+    text-align: center; 
+}
+
+.urlNoticia {
+    margin-top: 10px;
+    font-family: "Merriweather", sans-serif;
+    font-style: normal;
+    font-size: 12px; 
+    text-align: center; 
+    margin-bottom: 50px;
 }
 
 footer.navbar {
@@ -80,18 +145,17 @@ footer .contenido {
     width: 100%;
 }
 
-footer .item {
-    flex: 1;
-    text-align: center;
-}
-
 footer .lista {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around; 
     list-style: none;
     margin: 0;
     padding: 0;
     width: 100%;
+}
+
+footer .item {
+    flex: 1; 
 }
 
 footer .item a {
@@ -100,10 +164,13 @@ footer .item a {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: black;
-    font-size: 12px;
-    padding: 10px 0;
-    width: 100%;
+    color: rgba(0, 0, 0, 0.61);
+    font-size: 10px;
+    padding: 5px 0;
+    width: 100%; 
+    font-family: "Merriweather", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 footer .item a i {
@@ -112,7 +179,7 @@ footer .item a i {
 
 footer .item a span {
     margin-top: 5px;
-    font-size: 12px;
+    font-size: 10px;
     transition: color 0.3s ease;
 }
 
@@ -132,7 +199,18 @@ footer .item a.active {
     color: blue;
 }
 
-main {
-    flex: 1;
-    padding-bottom: 90px;
+@media (max-width: 768px) {
+
+    footer .item {
+        flex: none;
+    }
+
+    footer .item a {
+        font-size: 14px; 
+        padding: 15px 0; 
+    }
+
+    footer .item a i {
+        font-size: 20px; 
+    }
 }
