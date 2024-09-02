@@ -6,6 +6,7 @@ html, body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-bottom: 50px;
 }
 
 header {
@@ -65,19 +66,9 @@ button {
     font-weight: 500;
     font-style: normal;
     font-size: 30px;
-    margin-bottom: 10px;
 }
 
-.custom-carousel {
-    margin-bottom: 70px;
-    margin-top: 30px; 
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    height: auto; 
-}
-
-.principalesNoticias-section {
+.principalesNoticias-section{
     padding: 0 20px;
 }
 
@@ -89,47 +80,16 @@ button {
     margin-bottom: 10px;
 }
 
-.container{
-    background-color: rgba(238, 238, 238, 0.473);
-    border-radius: 30px;
-    border: 1px solid #ccc;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 20px; 
-}
 
-.imagenNoticia {
-    width: 100%; 
+.custom-carousel {
+    margin-bottom: 30px;
+    margin-top: 30px; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
     height: auto; 
-    max-width: 607px;
-    margin: 0 auto; 
 }
 
-.tituloNoticia {
-    margin-top: 30px;
-    font-family: "Merriweather", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 25px;
-    text-align: center; 
-}
-
-.descripcionNoticia {
-    font-size: 18px;
-    font-weight: 500;
-    font-family: "Merriweather", sans-serif;
-    text-align: center; 
-}
-
-.urlNoticia {
-    margin-top: 10px;
-    font-family: "Merriweather", sans-serif;
-    font-style: normal;
-    font-size: 12px; 
-    text-align: center; 
-    margin-bottom: 50px;
-}
 
 footer.navbar {
     position: fixed;
