@@ -64,7 +64,7 @@ button {
     font-weight: 900;
     font-style: normal;
     margin-left: 20px;
-    padding:40px ;
+    padding:10px ;
 }
 
 .result-item {
@@ -81,8 +81,10 @@ button {
 }
 
 .no-results {
+    margin-top: 20px;
     text-align: center;
-    font-size: 18px;
+    font-size: 19px;
+    font-weight: 90;
     color: #000000;
 }
 

@@ -26,36 +26,43 @@ header {
     margin: 0;
 }
 
-.Noticias-section {
-    padding: 0 10px; 
+.Noticias {
     margin-top: 20px;
     margin-left: 20px;
-}
-
-.Noticias {
     font-family: "Merriweather", sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 2rem; 
+    font-size: 2rem;
+}
+
+.Noticias-section {
+    padding-left: 20%; 
+    padding-right: 20%;
 }
 
 .card-title {
     font-family: "Merriweather", sans-serif;
-    font-size: 1.125rem; 
-    font-weight: 700;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
 }
 
-.card-text {
-    font-family: "Lato", sans-serif;
-    font-size: 0.875rem; 
-    color: rgba(0, 0, 0, 0.8);
+img {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+    margin: auto;
+    object-fit: cover;
 }
 
-.card {
-    margin: 0 auto;
-    width: 90%; 
-    max-width: 800px; 
+.card-body {
+    text-align: justify;
 }
+
 
 footer.navbar {
     position: fixed;
@@ -140,4 +147,3 @@ footer .item a.active {
         font-size: 20px; 
     }
 }
-

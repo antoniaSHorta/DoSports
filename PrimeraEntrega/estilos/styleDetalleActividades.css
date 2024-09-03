@@ -27,13 +27,13 @@ header {
 }
 
 .card {
-    margin-top: 90px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin: 90px auto;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    width: 90%; 
+    max-width: 800px; 
 }
 
 .card-header {
@@ -43,6 +43,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; 
 }
 
 .card-title {
@@ -51,20 +52,24 @@ header {
     font-style: normal;
     margin-top: 10px;
     font-size: 30px;
+    text-align: center; 
+    width: 100%; 
 }
 
 .date {
     font-size: 14px;
     color: rgb(0, 0, 0);
+    text-align: center; 
+    width: 100%; 
+    margin-top: 10px; 
 }
 
 .card-img-top {
     width: 100%; 
     height: auto;
     max-width: 800px; 
-    margin: 0 auto; 
-    display: block; 
-    margin-top: 40px;
+    margin: 40px auto 0 auto; 
+    display: block;
 }
 
 .card-body {
@@ -83,7 +88,7 @@ header {
 }
 
 .btn-primary {
-    background-color:blue;
+    background-color: blue;
     border: none;
     font-family: "Merriweather", sans-serif;
     font-weight: 800;
@@ -166,13 +171,30 @@ footer .item a.active {
 
 @media (max-width: 768px) {
 
-    footer .item {
-        flex: none;
+    .nombre {
+        font-size: 36px; 
+    }
+
+    .card-header {
+        padding: 20px; 
+    }
+
+    .card-title {
+        font-size: 24px; 
+    }
+
+    .card-text {
+        font-size: 16px; 
+    }
+
+    .btn-primary {
+        padding: 10px 20px; 
+        font-size: 16px; 
     }
 
     footer .item a {
-        font-size: 14px; 
-        padding: 15px 0; 
+        font-size: 12px; 
+        padding: 10px 0; 
     }
 
     footer .item a i {
