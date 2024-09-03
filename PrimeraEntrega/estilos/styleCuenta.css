@@ -1,59 +1,72 @@
-html, body{
+html, body {
     background-color: rgb(243, 243, 243);
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
 }
 
-.nombre{
-    background-color: blue;
-    color: white;
+header {
+    background-color: #0000ff;
+    padding: 30px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    margin: 0;
-    box-sizing: border-box;
-    padding: 30px;
-    width: 100vw;
+}
+
+.nombre {
+    font-family: "Merriweather", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: white;
     font-size: 50px;
     text-align: center;
+    margin: 0;
 }
+
 
 footer.navbar {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     background-color: white;
     border-top: 1px solid #ccc;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
 }
 
 footer .contenido {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
+    width: 100%;
 }
 
 footer .lista {
+    display: flex;
+    justify-content: space-around; 
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
     width: 100%;
-    justify-content: space-around;
 }
 
 footer .item {
-    text-align: center;
-    flex: 1;
+    flex: 1; 
 }
 
 footer .item a {
-    text-decoration: none;
-    color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 14px;
+    justify-content: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.61);
+    font-size: 10px;
+    padding: 5px 0;
+    width: 100%; 
+    font-family: "Merriweather", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 footer .item a i {
@@ -62,7 +75,7 @@ footer .item a i {
 
 footer .item a span {
     margin-top: 5px;
-    font-size: 12px;
+    font-size: 10px;
     transition: color 0.3s ease;
 }
 
@@ -82,8 +95,18 @@ footer .item a.active {
     color: blue;
 }
 
+@media (max-width: 768px) {
 
+    footer .item {
+        flex: none;
+    }
 
+    footer .item a {
+        font-size: 14px; 
+        padding: 15px 0; 
+    }
 
-
-
+    footer .item a i {
+        font-size: 20px; 
+    }
+}

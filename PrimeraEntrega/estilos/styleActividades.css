@@ -6,6 +6,7 @@ html, body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-bottom: 50px;
 }
 
 header {
@@ -25,6 +26,54 @@ header {
     margin: 0;
 }
 
+.proxima{
+    font-family: "Merriweather", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.actividad {
+    background-color: #cacacaa1;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.actividad i {
+    font-size: 30px;
+}
+
+.actividad span {
+    flex-grow: 1;
+    margin-left: 15px;
+    font-size: 20px;
+    font-family: "Merriweather";
+    font-weight: 300;
+    font-style: normal;
+}
+
+.info-icon {
+    color: black;
+    text-decoration: none;
+}
+
+.info-icon:hover {
+    color: blue;
+}
 footer.navbar {
     position: fixed;
     bottom: 0;

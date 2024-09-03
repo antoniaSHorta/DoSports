@@ -26,64 +26,74 @@ header {
     margin: 0;
 }
 
-.search-section {
-    font-family: "Merriweather", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    padding: 20px;
-}
-
-
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-}
-
-input[type="search"] {
-    padding: 10px 20px;
-    width: 70%;
-    border: 1px solid #ccc;
-    border-radius: 30px 0 0 30px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: blue;
-    border: 1px solid blue;
-    border-left: none;
-    border-radius: 0 30px 30px 0;
-    color: white;
-    cursor: pointer;
-}
-
-.search-results {
-    font-family: "Merriweather", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    margin-left: 20px;
-    padding:40px ;
-}
-
-.result-item {
+.card {
+    margin-top: 90px;
+    margin-left: 200px;
+    margin-right: 200px;
     background-color: white;
-    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 50px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    font-family: "Merriweather", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.date {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+}
+
+.card-img-top {
+    width: 100%; 
+    height: auto;
+    max-width: 800px; 
+    margin: 0 auto; 
+    display: block; 
+    margin-top: 40px;
+}
+
+.card-body {
+    padding: 20px;
+    margin: 30px;
+}
+
+.card-text {
+    font-family: "Merriweather", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color:blue;
+    border: none;
+    font-family: "Merriweather", sans-serif;
+    font-weight: 800;
     border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
-    font-weight: 17;
-}
-
-.result-item h3 {
-    margin-top: 0;
-}
-
-.no-results {
-    text-align: center;
-    font-size: 18px;
-    color: #000000;
+    padding: 15px 30px; 
+    font-size: 18px; 
+    display: block; 
+    width: 100%; 
+    max-width: 300px; 
+    margin: 20px auto 0 auto;
 }
 
 footer.navbar {
@@ -169,9 +179,3 @@ footer .item a.active {
         font-size: 20px; 
     }
 }
-
-
-
-
-
-
