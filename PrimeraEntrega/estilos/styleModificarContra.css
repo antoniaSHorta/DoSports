@@ -26,44 +26,58 @@ header {
     margin: 0;
 }
 
-main.container {
-    background-color: white;
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    margin-top: 100px;
+}
+
+.principal{
+    width: 400px;
+    background: #fff;
     border-radius: 8px;
-    padding: 2rem;
-    max-width: 800px; /* Aumenta el ancho máximo */
-    margin: 2rem auto; /* Centra el main */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra para destacar */
+    padding: 30px;
+    margin-top: 60px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.list-group-item {
-    font-size: 1.2rem; 
-    padding: 1rem 1.5rem; 
-    border: none; 
-    border-bottom: 1px solid #dee2e6; 
-    transition: background-color 0.3s ease; 
+
+form .campo{
+    height: 52px;
+    margin: 18px 0;
 }
 
-.list-group-item:hover {
-    background-color: #f1f1f1; 
+.campo input{
+    height: 100%;
+    width: 100%;
+    border: 1px solid silver;
+    outline: none;
+    font-size: 17px;
+    padding: 0 17px;
+    border-radius: 8px;
+    font-weight: 400;
 }
 
-.list-group-item {
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-}
 
-.noti {
-    flex: 1; 
-}
-
-.radio-group {
-    display: flex; 
-    align-items: center; 
-}
-
-.radio-group .custom-control {
-    margin-left: 10px;
+.boton{
+    display: block; 
+    margin: 0 auto; 
+    width: 200px;
+    text-decoration: none;
+    padding: 12px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin-top: 40px;
 }
 
 

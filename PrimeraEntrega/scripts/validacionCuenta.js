@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!entrar) {
             alert("Formulario enviado con éxito");
+            window.location.href = 'index.html';
         }
     });
 });
