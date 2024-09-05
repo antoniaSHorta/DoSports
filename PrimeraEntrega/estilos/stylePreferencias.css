@@ -1,0 +1,133 @@
+html, body {
+    background-color: rgb(243, 243, 243);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+header {
+    background-color: #0000ff;
+    padding: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.nombre {
+    font-family: "Merriweather", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+}
+
+main.container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 800px; /* Aumenta el ancho máximo */
+    margin: 2rem auto; /* Centra el main */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra para destacar */
+}
+
+.list-group-item {
+    font-size: 1.2rem; 
+    padding: 1rem 1.5rem; 
+    border: none; 
+    border-bottom: 1px solid #dee2e6; 
+    transition: background-color 0.3s ease; 
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1; 
+}
+
+
+footer.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    padding: 0;
+}
+
+footer .contenido {
+    width: 100%;
+}
+
+footer .lista {
+    display: flex;
+    justify-content: space-around; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+footer .item {
+    flex: 1; 
+}
+
+footer .item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.61);
+    font-size: 10px;
+    padding: 5px 0;
+    width: 100%; 
+    font-family: "Merriweather", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+footer .item a i {
+    font-size: 24px;
+}
+
+footer .item a span {
+    margin-top: 5px;
+    font-size: 10px;
+    transition: color 0.3s ease;
+}
+
+footer .item a:hover {
+    color: blue;
+}
+
+footer .item a:hover i {
+    color: blue;
+}
+
+footer .item a:hover span {
+    color: blue;
+}
+
+footer .item a.active {
+    color: blue;
+}
+
+@media (max-width: 768px) {
+
+    footer .item {
+        flex: none;
+    }
+
+    footer .item a {
+        font-size: 14px; 
+        padding: 15px 0; 
+    }
+
+    footer .item a i {
+        font-size: 20px; 
+    }
+}
