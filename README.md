@@ -14,9 +14,9 @@ Incluyendo una sección de comunicación, donde los usuarios pueden solicitar as
 ## Tabla de Contenidos
 
 1. [Análisis de las Funcionalidades](#análisisdelasfuncionalidades)
-2. [Prototipado Figma](#prototipadofigma)
-3. [Maquetación Responsiva](#aaquetaciónresponsiva)
-4. [Formularios y Validación](#formulariosyvalidación)
+2. [Modelo de la base de datos](#Modelodelabasededatos)
+3. [Prototipado Figma](#prototipadofigma)
+4. [Maquetación Responsiva](#maquetaciónresponsiva)
 5. [Tecnologías](#tecnologías)
 
 ## Análisis de las Funcionalidades
@@ -41,6 +41,11 @@ Incluyendo una sección de comunicación, donde los usuarios pueden solicitar as
 
 - Historial de actividades y sesiones: El usuario tendrá acceso a un historial de actividades deportivas en las que ha participado.
 
+## Modelo de la base de datos
+
+El motor de base de datos a ocupar es **MySQL**, ya que el sistema requiere la gestión de datos interrelacionados, como las actividades a las que un usuario se puede inscribir o las publicaciones que realiza en el foro, una base de datos relacionales como MySQL es ideal para esto.
+
+Para la definición del modelo de base de datos, se ha diseñado un diagrama que incluye múltiples tablas relacionadas, las cuales están alineadas con los requerimientos funcionales del sistema mencionadas en el punto anterior. Las entidades principales del modelo son Usuario , Perfil , Actividad , Asesoramiento , Inscripción a Actividades , Publicación en Foro. hay que tener en cuenta que en la entidad **Usuario** el atributo **tipoUsuario** definira **si es administrador o no**, por ende **si es administrador el usuario podra gestionar: Noticias, Actividad, Foro y Asesoramiento.**
 
 ## Prototipado en Figma
 
@@ -51,8 +56,12 @@ La aplicación será desarrollada con HTML5, CSS3 y JavaScript, utilizando frame
 maquetación responsiva.
 
 ## Tecnologías
+![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=flat&logo=ionic&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+
 
 
