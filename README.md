@@ -24,18 +24,23 @@ Incluyendo una sección de comunicación, donde los usuarios pueden solicitar as
 - Creación de perfil: El usuario podrá registrarse en la aplicación y asi obtener un perfil, en donde se guardara su registro.
 
 - Inicio de sesión (Usuario/Administrador): La plataforma contendra un inicio de sesión donde se pedirá correo electronico y contraseña.
+
+- Editar perfil:  El usuario tendra un menú de configuraciones, en este podrá visualizar su gestión de actividades, visualizar su solicitud de asesoramiento, eliminar su cuenta o modificar sus datos personales.
   
 - Sección de noticias: DoSports contará con una sección de noticias, donde se podrán mantener informados los usuarios sobre las últimas novedades/actualizaciones del acontecer nacional de deportes, a través de la conexión con un sitio de noticias.
 
-- Editar perfil:  El usuario tendra un menú de configuraciones, en este podrá visualizar su gestión de actividades, visualizar su solicitud de asesoramiento, eliminar su cuenta o modificar sus datos personales.
+- Gestión de sesiones de asesoramiento: Los administradores tendrán la capacidad de gestionar sesiones a través de la aplicación, incluyendo la posibilidad de ofrecer horario disponible para realizar asesoramiento, cancelar un hora y confirmar nuevas horas.
 
 - Solicitud de asesoramiento: Los usuarios tendran la opción de solicitar asesoramiento, esto se realizará a través del llenado de formulario, notificandolos en su correo cuando se les agende una hora.
 
 - Buscador: Los usuarios podran buscar en la aplicación actividades específicas a través de una barra buscadora, esta no contempla filtros o categorias.
 
-- Gestión de Actividades Deportivas: Los usuarios podrán gestionar sus actividades deportivas a través de la aplicación, lo que les permitirá inscribirse en nuevas actividades o eliminar su participación en las existentes.
+- Gestión de Actividades Deportivas (Usuario/Administrador): Los usuarios podrán gestionar sus actividades deportivas a través de la aplicación, lo que les permitirá inscribirse en nuevas actividades o eliminar su participación en las existentes.
 
-- Gestión de sesiones de asesoramiento: Los administradores tendrán la capacidad de gestionar sesiones a través de la aplicación, incluyendo la posibilidad de ofrecer horario disponible para realizar asesoramiento, cancelar un hora y confirmar nuevas horas.
+- Foro: Donde los usuarios podrán discutir temas relacionados con deportes.
+
+- Historial de actividades y sesiones: El usuario tendrá acceso a un historial de actividades deportivas en las que ha participado.
+
 
 ## Prototipado en Figma
 
