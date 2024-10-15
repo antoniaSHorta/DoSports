@@ -1,0 +1,51 @@
+.contenido{
+    --background: rgb(3, 8, 37);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height:100vh;
+}
+.contenidoCentro{
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.titulo{
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    font-size: 40px;
+    margin-bottom: 2rem;
+    --text-transform: none;
+}
+  
+.botonIniciar{
+    --border-radius: 20px;
+    --background: white;
+    --color: black;
+    width: 300px;
+    font-size: 17px;
+    margin-bottom: 1.5rem;
+    text-transform: none;
+
+}
+
+.crearCuenta{
+    color: white;
+    position:fixed;
+    left:0px;
+    bottom:10px;
+    height:40px;
+    width:100%;
+    font-size: 17px;
+}
+  
+.crearCuenta a {
+    color: red;
+    text-decoration: none;
+    
+}
+  
