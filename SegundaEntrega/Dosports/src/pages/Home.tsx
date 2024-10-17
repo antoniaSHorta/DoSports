@@ -9,7 +9,7 @@ const Home: React.FC = () => {
           <IonText className="titulo">DoSports</IonText>
           <IonButton expand="block" className="botonIniciar">Iniciar Sesión</IonButton>
         </div>
-        <IonText className="crearCuenta">¿No tienes una cuenta? <a href="#">Crear Cuenta</a>
+        <IonText className="crearCuenta">¿No tienes una cuenta? <a href="Inicio.tsx">Crear Cuenta</a>
         </IonText>
       </IonContent>
     </IonPage>
