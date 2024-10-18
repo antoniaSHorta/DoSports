@@ -47,6 +47,11 @@ El motor de base de datos a ocupar es **MySQL**, ya que el sistema requiere la g
 
 Para la definición del modelo de base de datos, se ha diseñado un diagrama que incluye múltiples tablas relacionadas, las cuales están alineadas con los requerimientos funcionales del sistema mencionadas en el punto anterior. Las entidades principales del modelo son Usuario , Perfil , Actividad , Asesoramiento , Inscripción a Actividades , Publicación en Foro. hay que tener en cuenta que en la entidad **Usuario** el atributo **tipoUsuario** definira **si es administrador o no**, por ende **si es administrador el usuario podra gestionar: Noticias, Actividad, Foro y Asesoramiento.**
 
+![WhatsApp Image 2024-10-15 at 12 11 04](https://github.com/user-attachments/assets/a1804da3-604d-4281-a00e-f395f3e7652a)
+
+![WhatsApp Image 2024-10-15 at 12 10 47](https://github.com/user-attachments/assets/83929810-6e54-40e2-aba8-2d409ae512a8)
+
+
 ## Prototipado en Figma
 
 [Prototipo Wireframe](https://www.figma.com/design/OhpDLO1HikjoKl7ndrjHzc/DoSports?node-id=11-27&t=rvU3IIRrJTx0IBBJ-1)
