@@ -1,15 +1,26 @@
-import { IonContent,IonPage, IonText,IonButton } from '@ionic/react';
+import { IonContent, IonPage, IonText, IonButton } from '@ionic/react';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './Home.css';
 
 const Home: React.FC = () => {
+  const history = useHistory();
+
+  const handleIniciarSesion = () => {
+    history.push('/inicio'); 
+  };
+
   return (
     <IonPage>
       <IonContent fullscreen className="contenido">
         <div className="contenidoCentro">
           <IonText className="titulo">DoSports</IonText>
-          <IonButton expand="block" className="botonIniciar">Iniciar Sesión</IonButton>
+          <IonButton expand="block" className="botonIniciar" onClick={handleIniciarSesion}>
+            Iniciar Sesión
+          </IonButton>
         </div>
-        <IonText className="crearCuenta">¿No tienes una cuenta? <a href="Inicio.tsx">Crear Cuenta</a>
+        <IonText className="crearCuenta">
+          ¿No tienes una cuenta? <a href="#">Crear Cuenta</a>
         </IonText>
       </IonContent>
     </IonPage>

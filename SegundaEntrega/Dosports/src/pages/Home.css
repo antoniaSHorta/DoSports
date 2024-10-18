@@ -14,19 +14,23 @@
 }
   
 .titulo{
-    text-align: center;
+    font-family: "Merriweather", sans-serif; 
+    font-weight: 900; 
+    font-style: normal; 
     color: white;
-    font-weight: 800;
-    font-size: 40px;
-    margin-bottom: 2rem;
+    font-size: 50px; 
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
     --text-transform: none;
 }
   
 .botonIniciar{
     --border-radius: 20px;
+    font-family: "Merriweather"; 
     --background: white;
     --color: black;
-    width: 300px;
+    width: 400px;
     font-size: 17px;
     margin-bottom: 1.5rem;
     text-transform: none;

@@ -1,19 +1,19 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import './Inicio.css';
 import Navbar from '../components/Navegationbar';
 import Head from '../components/HeadIcon';
 
-const Inicio: React.FC = () => {
+const Foro: React.FC = () => {
   return (
     <IonPage>
-       <Head />
+    <Head /> 
       <IonContent>
-        <p>Contenido de la página de inicio</p>
+        <p>Bienvenido al foro! Comparte y discute temas aquí.</p>
       </IonContent>
       <Navbar></Navbar>
+
     </IonPage>
   );
 };
 
-export default Inicio;
+export default Foro;
