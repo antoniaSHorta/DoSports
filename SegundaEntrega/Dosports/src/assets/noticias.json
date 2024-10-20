@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "image": "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+      "date": "20 de octubre de 2024",
+      "title": "Título de la noticia 1",
+      "description": "Descripción breve de la noticia 1."
+    },
+    {
+      "id": 2,
+      "image": "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+      "date": "19 de octubre de 2024",
+      "title": "Título de la noticia 2",
+      "description": "Descripción breve de la noticia 2."
+    }
+  ]
+  

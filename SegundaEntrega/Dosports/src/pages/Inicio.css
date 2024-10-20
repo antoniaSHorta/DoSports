@@ -1,0 +1,24 @@
+.swiper img {
+    width: 90%; 
+    height: 400px; 
+    object-fit: cover; 
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 16px;
+    margin-top: 40px;
+  }
+
+  ion-card-title {
+    margin-top: 20px;
+    font-size: 24px; 
+    font-weight: bold; 
+    font-family: "Merriweather";
+  }
+  
+  

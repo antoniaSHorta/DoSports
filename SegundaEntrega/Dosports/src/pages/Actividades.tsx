@@ -1,5 +1,6 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonPage} from '@ionic/react';
+import './Actividades.css';
 import Navbar from '../components/Navegationbar';
 import Head from '../components/HeadIcon';
 
@@ -8,7 +9,7 @@ const Actividades: React.FC = () => {
     <IonPage>
     <Head />
       <IonContent>
-        <p>Aquí puedes ver todas las actividades disponibles.</p>
+        
       </IonContent>
       <Navbar></Navbar>
     </IonPage>
