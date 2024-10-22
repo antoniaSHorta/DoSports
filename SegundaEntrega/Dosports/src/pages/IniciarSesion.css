@@ -2,11 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; 
+    min-height: 70%; 
     box-sizing: border-box;
+    border-radius: 28px;
 }
 
 .login-form-card {
+    border-radius: 28px;
     width: 40%;
 }
 
