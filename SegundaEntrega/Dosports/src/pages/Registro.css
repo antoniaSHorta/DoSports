@@ -1,0 +1,53 @@
+
+.registro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%; 
+    padding: 10px;
+}
+
+.registro-form-card {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 32px;
+}
+
+.registro-form-item ion-input {
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+}
+  
+.registro-form-item ion-select {
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+    margin-top: 12px;
+}
+  
+.registro-error-container {
+    margin-top: 22px;
+    padding: 12px;
+    background-color: #fff5f5;
+    border-radius: 8px;
+    border: 1px solid #fed7d7;
+ }
+  
+ .registro-error-message {
+    color: #e53e3e;
+    text-align: center;
+    font-size: 14px;
+}
+  
+.registro-button-container {
+    display: flex;
+    justify-content: center;
+}
+  
+.registro-button{
+    --background: #0000ff;
+    --border-radius: 40px;
+    width: 80%;
+    font-size: 17px;
+    text-transform: none;
+}
+

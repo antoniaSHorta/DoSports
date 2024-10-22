@@ -27,7 +27,6 @@
   
 .botonIniciar{
     --border-radius: 20px;
-    font-family: "Merriweather"; 
     --background: white;
     --color: black;
     width: 400px;

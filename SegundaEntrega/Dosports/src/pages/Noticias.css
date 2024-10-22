@@ -1,6 +1,42 @@
 ion-card-title {
-    margin-top: 20px;
-    font-size: 24px; 
-    font-weight: bold; 
-    font-family: "Merriweather";
+  margin-top: 20px;
+  font-size: 24px; 
+  font-weight: bold; 
+  font-family: "Merriweather";
+}
+
+ion-button{
+  margin-top: 20px;
+  width: 200px;
+}
+
+ion-label{
+  margin-top: 7px;
+}
+
+p{
+  color: black;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  ion-card-title {
+    font-size: 20px; 
   }
+
+  ion-button {
+    margin-top: 15px; 
+    width: 100%; 
+  }
+}
+
+@media (max-width: 480px) {
+  ion-card-title {
+    font-size: 18px; 
+  }
+}

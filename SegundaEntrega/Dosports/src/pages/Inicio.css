@@ -6,19 +6,20 @@
     margin: 0 auto;
   }
   
-  .swiper {
+.swiper {
     width: 100%;
     height: auto;
     margin: 0 auto;
     padding: 16px;
     margin-top: 40px;
-  }
+}
 
-  ion-card-title {
+
+ion-card-title {
     margin-top: 20px;
     font-size: 24px; 
     font-weight: bold; 
     font-family: "Merriweather";
-  }
-  
-  
+    margin-bottom: 1px;
+}
+

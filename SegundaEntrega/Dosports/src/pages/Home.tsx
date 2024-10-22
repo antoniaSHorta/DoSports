@@ -7,7 +7,7 @@ const Home: React.FC = () => {
   const history = useHistory();
 
   const handleIniciarSesion = () => {
-    history.push('/inicio'); 
+    history.push('/iniciarSesion'); 
   };
 
   return (
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
           </IonButton>
         </div>
         <IonText className="crearCuenta">
-          ¿No tienes una cuenta? <a href="#">Crear Cuenta</a>
+          ¿No tienes una cuenta? <a href="/registro">Crear Cuenta</a>
         </IonText>
       </IonContent>
     </IonPage>

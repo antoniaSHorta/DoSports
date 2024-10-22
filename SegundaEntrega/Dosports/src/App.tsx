@@ -8,6 +8,8 @@ import Buscar from './pages/Buscador';
 import Noticias from './pages/Noticias';
 import Foro from './pages/Foro';  
 import Cuenta from './pages/Cuenta'; 
+import IniciarSesion from './pages/IniciarSesion'; 
+import Registro from './pages/Registro'; 
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -24,6 +26,9 @@ const App: React.FC = () => (
         <Route exact path="/home">
           <Home/>
         </Route>
+        <Route exact path="/iniciarSesion">
+          <IniciarSesion/>
+        </Route>
         <Route exact path="/inicio">
           <Inicio/>
         </Route>
@@ -38,6 +43,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/foro">
           <Foro/>
+        </Route>
+        <Route exact path="/registro">
+          <Registro/>
         </Route>
         <Route exact path="/cuenta">
           <Cuenta/>
