@@ -1,0 +1,31 @@
+.cuenta-item {
+   padding: 0 !important;  
+   margin: 0 !important;   
+
+}
+
+.boton-cerrar {
+    color: red; 
+    --background: none; 
+    --border: none;
+    --box-shadow: none; 
+    --outline: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-transform: none;
+    width: 100%;
+    font-size: 16px;
+ }
+  
+.alinear{
+   padding: 30px;
+}
+
+.letras{
+   color: black;
+   width: 100%;
+   font-size: 17px;
+   margin-left: 20px;
+}
+
+

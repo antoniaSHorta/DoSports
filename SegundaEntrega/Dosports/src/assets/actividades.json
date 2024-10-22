@@ -1,0 +1,16 @@
+[
+    {
+      "id": 1,
+      "date": "20 de octubre de 2024",
+      "title": "Torneo de Fútbol 7",
+      "resumen": "Resumen de la actividad 1",
+      "description": "¡Únete a nuestro emocionante Torneo de Fútbol 7! Esta actividad está diseñada para jugadores de todos los niveles, desde principiantes hasta expertos. El torneo se llevará a cabo el próximo mes en el campo deportivo local, y se jugará en equipos de siete jugadores. Cada equipo competirá en una serie de partidos para alcanzar la final. Además de fomentar el deporte y la competencia amistosa, el evento ofrecerá premios para los mejores equipos y un ambiente festivo para todos los participantes. La inscripción está abierta hasta el [10 de Noviembre], así que no pierdas la oportunidad de ser parte de esta experiencia inolvidable. ¡Forma tu equipo y regístrate ya!"
+    },
+    {
+      "id": 2,
+      "date": "19 de octubre de 2024",
+      "title": "Clases de Yoga al Aire Libre",
+      "resumen": "Resumen de la actividad 2",
+      "description": "Participa en nuestras Clases de Yoga al Aire Libre, diseñadas para todos los niveles de experiencia, desde principiantes hasta practicantes avanzados. Las sesiones se llevarán a cabo en un hermoso parque local todos los sábados por la mañana. Con la guía de un instructor certificado, disfrutarás de una práctica que combina movimientos suaves, técnicas de respiración y meditación, todo en un entorno natural que promueve la paz y la relajación. Además, estas clases son una excelente oportunidad para socializar y conectar con la comunidad. La inscripción es gratuita, pero los espacios son limitados. ¡Asegúrate de reservar tu lugar y traer tu mat de yoga!"
+    }
+  ]

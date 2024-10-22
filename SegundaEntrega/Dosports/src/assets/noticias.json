@@ -4,14 +4,17 @@
       "image": "https://ionicframework.com/docs/img/demos/thumbnail.svg",
       "date": "20 de octubre de 2024",
       "title": "Título de la noticia 1",
-      "description": "Descripción breve de la noticia 1."
+      "resumen": "Resumen de la noticia 1",
+      "description": "En un partido lleno de tensión, el equipo local logró hacerse con el título de campeón de la liga de baloncesto después de un increíble enfrentamiento contra el equipo visitante. El marcador estaba empatado a falta de 10 segundos, cuando el jugador estrella lanzó un triple que selló la victoria con un 78-75. Los fanáticos estallaron de alegría en el estadio, celebrando un triunfo que no solo les da el campeonato, sino que también sienta las bases para una próxima temporada prometedora. Los jugadores fueron reconocidos por su arduo trabajo y dedicación a lo largo de la temporada."
     },
     {
       "id": 2,
       "image": "https://ionicframework.com/docs/img/demos/thumbnail.svg",
       "date": "19 de octubre de 2024",
       "title": "Título de la noticia 2",
-      "description": "Descripción breve de la noticia 2."
+      "resumen": "Resumen de la noticia 2",
+      "description":  "En un emocionante partido jugado en el Estadio Nacional, el equipo nacional se enfrentó a su rival tradicional y salió victorioso con un marcador de 3-1. Los goles fueron anotados por el delantero estrella, quien demostró su habilidad y liderazgo en el campo. Con esta victoria, el equipo no solo avanza a la siguiente fase del torneo, sino que también reafirma su posición como uno de los favoritos para llevarse el trofeo. Los aficionados celebraron con entusiasmo, y la ciudad se llenó de banderas y cánticos en honor a los jugadores."
+ 
     }
   ]
   

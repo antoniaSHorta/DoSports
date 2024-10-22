@@ -1,0 +1,15 @@
+ion-card-subtitle {
+    --color:black;
+}
+
+ion-button {
+    --background:  #0000ff;
+    --border-radius: 30px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+}
+
+ion-card-content{
+    color: black;
+}
+

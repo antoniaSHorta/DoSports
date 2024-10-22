@@ -1,10 +1,11 @@
-import { IonContent,IonPage,IonCard,IonCardContent,IonItemDivider,IonCardHeader,IonButton,IonCardTitle,IonItem,IonLabel,IonList,IonThumbnail,} from '@ionic/react';
+import { IonContent,IonPage,IonCard,IonCardContent,IonRouterLink,IonButton,IonCardTitle,IonItem,IonLabel,IonList,IonThumbnail,} from '@ionic/react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';  
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';  
 import 'swiper/css';  
 import 'swiper/css/pagination';  
 import slidesData from '../assets/datos.json';  
+import  noticiasData from '../assets/noticias.json';
 
 
 import './Inicio.css';
@@ -33,43 +34,25 @@ const Inicio: React.FC = () => {
         </SwiperSlide>
       ))}
       </Swiper>
-
-      <IonCard>
-      <IonCardHeader>
-        <IonCardTitle>Noticias destacadas</IonCardTitle>
-        <IonItemDivider></IonItemDivider>
-      </IonCardHeader>
+      
+      <IonCardTitle style={{marginLeft:'30px'}}>Noticias destacadas</IonCardTitle>
+      {noticiasData.map((noticia) => (
+      <IonCard key={noticia.id}>
       <IonCardContent>
         <IonList>
-
           <IonItem>
             <IonThumbnail slot="start">
-            <img alt="foto noticia" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+            <img alt={`Imagen de ${noticia.title}`} src={noticia.image} />
             </IonThumbnail>
-            <IonLabel>Título noticia 1</IonLabel>
-            <IonButton >Leer más</IonButton>
+            <IonLabel>{noticia.title}</IonLabel>
+            <IonRouterLink routerLink={`/noticia/${noticia.id}`}>
+                      <IonButton>Leer más</IonButton>
+            </IonRouterLink>
           </IonItem>
-
-          <IonItem>
-            <IonThumbnail slot="start">
-              <img alt="foto noticia" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-            </IonThumbnail>
-            <IonLabel>Título noticia 2</IonLabel>
-            <IonButton >Leer más</IonButton>
-          </IonItem>
-
-          <IonItem>
-            <IonThumbnail slot="start">
-              <img alt="foto noticia" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-            </IonThumbnail>
-            <IonLabel>Título noticia 3</IonLabel>
-            <IonButton >Leer más</IonButton>
-          </IonItem>
-
           </IonList>
       </IonCardContent>
       </IonCard>
-
+      ))}
       </IonContent>
 
       <Navbar></Navbar>

@@ -84,9 +84,19 @@ const Registro: React.FC = () => {
                       placeholder="Selecciona tu región"
                       onIonChange={handleChange}
                     >
-                      <IonSelectOption value="Region Metropolitana">Región Metropolitana</IonSelectOption>
-                      <IonSelectOption value="Valparaíso">Valparaíso</IonSelectOption>
-                      <IonSelectOption value="Biobío">Biobío</IonSelectOption>
+                      <IonSelectOption value="Arica y Parinacota">Arica y Parinacota</IonSelectOption>
+                      <IonSelectOption value="Tarapacá">Tarapacá</IonSelectOption>
+                      <IonSelectOption value="Antofagasta">Antofagasta</IonSelectOption>
+                      <IonSelectOption value="Atacama">Atacama</IonSelectOption>
+                      <IonSelectOption value="Coquimbo">Coquimbo</IonSelectOption>
+                      <IonSelectOption value="O'Higgins">O'Higgins</IonSelectOption>
+                      <IonSelectOption value="Maule">Maule</IonSelectOption>
+                      <IonSelectOption value="Ñuble">Ñuble</IonSelectOption>
+                      <IonSelectOption value="La Araucanía">La Araucanía</IonSelectOption>
+                      <IonSelectOption value="Los Ríos">Los Ríos</IonSelectOption>
+                      <IonSelectOption value="Los Lagos">Los Lagos</IonSelectOption>
+                      <IonSelectOption value="Aysén del General Carlos Ibáñez del Campo">Aysén del General Carlos Ibáñez del Campo</IonSelectOption>
+                      <IonSelectOption value="Magallanes y de la Antártica Chilena">Magallanes y de la Antártica Chilena</IonSelectOption>
                     </IonSelect>
                   </IonItem>
     

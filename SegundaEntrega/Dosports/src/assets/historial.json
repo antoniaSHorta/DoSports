@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "title": "Torneo de Fútbol 7",
+      "date": "20 de octubre de 2024",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Clases de Yoga al Aire Libre",
+      "date": "19 de octubre de 2024",
+      "completed": false
+    }
+]

@@ -10,6 +10,10 @@ import Foro from './pages/Foro';
 import Cuenta from './pages/Cuenta'; 
 import IniciarSesion from './pages/IniciarSesion'; 
 import Registro from './pages/Registro'; 
+import Actividad from './pages/Actividad'; 
+import Noticia from './pages/Noticia'; 
+import Asesoramiento from './pages/Asesoramiento';
+import Historial from './pages/Historial';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -50,6 +54,21 @@ const App: React.FC = () => (
         <Route exact path="/cuenta">
           <Cuenta/>
         </Route>
+        <Route exact path="/actividad">
+          <Actividad/>
+        </Route>
+        <Route exact path="/noticia">
+          <Noticia/>
+        </Route>
+        <Route exact path="/historial">
+          <Historial/>
+        </Route>
+        <Route exact path="/asesoramiento">
+          <Asesoramiento/>
+        </Route>
+        <Route path="/actividad/:id" component={Actividad} />
+        <Route path="/noticia/:id" component={Noticia} />
+
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>

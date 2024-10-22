@@ -1,55 +1,30 @@
 import React from 'react';
 import { IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
-import { home, list, search, newspaper, person,chatbubbles } from 'ionicons/icons';
-
-/*function Navbar() {
-  return (
-<IonTabBar slot="bottom">
-      <IonTabButton tab="inicio" href="/inicio">
-        <IonIcon icon={home} />
-        <IonLabel>Inicio</IonLabel>
-      </IonTabButton>
-
-      <IonTabButton tab="actividades" href="/actividades">
-        <IonIcon icon={list} />
-        <IonLabel>Actividades</IonLabel>
-      </IonTabButton>
-
-      <IonTabButton tab="buscar" href="/buscador">
-        <IonIcon icon={search} />
-        <IonLabel>Buscador</IonLabel>
-      </IonTabButton>
-
-      <IonTabButton tab="noticias" href="/noticias">
-        <IonIcon icon={newspaper} />
-        <IonLabel>Noticias</IonLabel>
-      </IonTabButton>
-
-      <IonTabButton tab="foro" href="/foro">
-        <IonIcon icon={chatbubbles} />
-        <IonLabel>Foro</IonLabel>
-      </IonTabButton>
-
-      <IonTabButton tab="cuenta" href="/cuenta">
-        <IonIcon icon={person} />
-        <IonLabel>Cuenta</IonLabel>
-      </IonTabButton>
-    </IonTabBar>
-  );
-}
-
-export default Navbar;*/
+import { home, list, search, newspaper, person, chatbubbles } from 'ionicons/icons';
 import { useHistory, useLocation } from 'react-router-dom';
+
 function Navbar() {
-  const history = useHistory(); // Para la navegación
-  const location = useLocation(); // Para obtener la ubicación actual
+  const history = useHistory(); 
+  const location = useLocation(); 
+
+  const isActive = (path: string) => {
+    switch(path) {
+      case '/actividades':
+        return location.pathname === '/actividades'|| location.pathname.startsWith('/actividad');
+      case '/noticias':
+        return location.pathname === '/noticias' || location.pathname.startsWith('/noticia'); 
+      case '/cuenta':
+        return location.pathname === '/cuenta'|| location.pathname.startsWith('/asesoramiento')|| location.pathname.startsWith('/historial'); 
+
+    }
+  };
 
   return (
     <IonTabBar slot="bottom">
       <IonTabButton
         tab="inicio"
         onClick={() => history.push('/inicio')}
-        style={{ color: location.pathname === '/inicio' ? 'blue' : 'gray' }} // Cambia el color
+        style={{ color: location.pathname === '/inicio' ? 'blue' : 'gray' }} 
       >
         <IonIcon icon={home} />
         <IonLabel>Inicio</IonLabel>
@@ -58,7 +33,7 @@ function Navbar() {
       <IonTabButton
         tab="actividades"
         onClick={() => history.push('/actividades')}
-        style={{ color: location.pathname === '/actividades' ? 'blue' : 'gray' }} // Cambia el color
+        style={{ color: isActive('/actividades') ? 'blue' : 'gray' }} 
       >
         <IonIcon icon={list} />
         <IonLabel>Actividades</IonLabel>
@@ -67,7 +42,7 @@ function Navbar() {
       <IonTabButton
         tab="buscar"
         onClick={() => history.push('/buscador')}
-        style={{ color: location.pathname === '/buscador' ? 'blue' : 'gray' }} // Cambia el color
+        style={{ color: location.pathname === '/buscador' ? 'blue' : 'gray' }} 
       >
         <IonIcon icon={search} />
         <IonLabel>Buscador</IonLabel>
@@ -76,7 +51,7 @@ function Navbar() {
       <IonTabButton
         tab="noticias"
         onClick={() => history.push('/noticias')}
-        style={{ color: location.pathname === '/noticias' ? 'blue' : 'gray' }} // Cambia el color
+        style={{ color: isActive('/noticias') ? 'blue' : 'gray' }} 
       >
         <IonIcon icon={newspaper} />
         <IonLabel>Noticias</IonLabel>
@@ -85,7 +60,7 @@ function Navbar() {
       <IonTabButton
         tab="foro"
         onClick={() => history.push('/foro')}
-        style={{ color: location.pathname === '/foro' ? 'blue' : 'gray' }} // Cambia el color
+        style={{ color: location.pathname === '/foro' ? 'blue' : 'gray' }} 
       >
         <IonIcon icon={chatbubbles} />
         <IonLabel>Foro</IonLabel>
@@ -94,7 +69,7 @@ function Navbar() {
       <IonTabButton
         tab="cuenta"
         onClick={() => history.push('/cuenta')}
-        style={{ color: location.pathname === '/cuenta' ? 'blue' : 'gray' }} // Cambia el color
+        style={{ color: isActive('/cuenta') ? 'blue' : 'gray' }} 
       >
         <IonIcon icon={person} />
         <IonLabel>Cuenta</IonLabel>
