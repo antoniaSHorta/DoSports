@@ -14,18 +14,15 @@ Incluyendo una sección de comunicación, donde los usuarios pueden solicitar as
 ## Tabla de Contenidos
 
 1. [Análisis de las Funcionalidades](#análisisdelasfuncionalidades)
-2. [Modelo de la base de datos](#Modelodelabasededatos)
-3. [Prototipado Figma](#prototipadofigma)
-4. [Maquetación Responsiva](#maquetaciónresponsiva)
-5. [Tecnologías](#tecnologías)
+2. [Prototipado Figma](#prototipadofigma)
+3. [Maquetación Responsiva](#maquetaciónresponsiva)
+4. [Tecnologías](#tecnologías)
 
 ## Análisis de las Funcionalidades
 
 - Creación de perfil: El usuario podrá registrarse en la aplicación y asi obtener un perfil, en donde se guardara su registro.
 
 - Inicio de sesión (Usuario/Administrador): La plataforma contendra un inicio de sesión donde se pedirá correo electronico y contraseña.
-
-- Editar perfil:  El usuario tendra un menú de configuraciones, en este podrá visualizar su gestión de actividades, visualizar su solicitud de asesoramiento, eliminar su cuenta o modificar sus datos personales.
   
 - Sección de noticias: DoSports contará con una sección de noticias, donde se podrán mantener informados los usuarios sobre las últimas novedades/actualizaciones del acontecer nacional de deportes, a través de la conexión con un sitio de noticias.
 
@@ -40,12 +37,6 @@ Incluyendo una sección de comunicación, donde los usuarios pueden solicitar as
 - Foro: Donde los usuarios podrán discutir temas relacionados con deportes.
 
 - Historial de actividades y sesiones: El usuario tendrá acceso a un historial de actividades deportivas en las que ha participado.
-
-## Modelo de la base de datos
-
-El motor de base de datos a ocupar es **MySQL**, ya que el sistema requiere la gestión de datos interrelacionados, como las actividades a las que un usuario se puede inscribir o las publicaciones que realiza en el foro, una base de datos relacionales como MySQL es ideal para esto.
-
-Para la definición del modelo de base de datos, se ha diseñado un diagrama que incluye múltiples tablas relacionadas, las cuales están alineadas con los requerimientos funcionales del sistema mencionadas en el punto anterior. Las entidades principales del modelo son Usuario , Perfil , Actividad , Asesoramiento , Inscripción a Actividades , Publicación en Foro. hay que tener en cuenta que en la entidad **Usuario** el atributo **tipoUsuario** definira **si es administrador o no**, por ende **si es administrador el usuario podra gestionar: Noticias, Actividad, Foro y Asesoramiento.**
 
 ## Prototipado en Figma
 
