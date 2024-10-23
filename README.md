@@ -49,6 +49,8 @@ Para la definición del modelo de base de datos, se ha diseñado un diagrama que
 **MySQL** es especialmente adecuado porque permite garantizar la integridad referencial entre las entidades a través de claves foráneas, manteniendo datos consistentes y evitando duplicaciones. Además, soporta consultas SQL complejas que son clave para funcionalidades como el buscador y el historial de actividades, mientras que su escalabilidad y rendimiento aseguran que la aplicación pueda crecer sin comprometer la eficiencia. Finalmente, MySQL ofrece robustas características de seguridad, protegiendo los datos sensibles de los usuarios, lo que es fundamental para una aplicación móvil como **DoSports**.
 
 [Modelo de la BD](SegundaEntrega/Dosports/MER.jpeg)
+
+
 [Esquema Relaciona](SegundaEntrega/Dosports/ER.jpeg)
 
 ## Tecnologías
