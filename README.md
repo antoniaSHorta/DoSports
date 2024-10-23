@@ -5,60 +5,51 @@ DoSports es una aplicación móvil híbrida diseñada para fomentar la participa
 
 A través de la aplicación, los miembros de la comunidad pueden inscribirse en diferentes actividades deportivas.
 
-Además ofrece una sección dedicada a noticias deportivas de alcance nacional, manteniendo a los usuarios informados sobre los eventos más relevantes del deporte.
+Además ofrece una sección dedicada a noticias deportivas, manteniendo a los usuarios informados sobre los eventos más relevantes del deporte.
 
 Incluyendo una sección de comunicación, donde los usuarios pueden solicitar asesoramiento y apoyo para adoptar o mantener un estilo de vida saludable en el contexto universitario.
 
 <sub>Aplicación desarrollada en el curso de ingenieria web y móvil INF3245</sub>
 
+## En la pagina de inicio se trabaja con Swiper, por ende, se necesita de instalación: npm install swiper.
+
 ## Tabla de Contenidos
 
-1. [Análisis de las Funcionalidades](#análisisdelasfuncionalidades)
-2. [Modelo de la base de datos](#Modelodelabasededatos)
-3. [Prototipado Figma](#prototipadofigma)
-4. [Maquetación Responsiva](#maquetaciónresponsiva)
-5. [Tecnologías](#tecnologías)
+1. [Funcionalidades](#funcionalidades)
+2. [Propuesta y Justificación](#propuesta-y-justificación)
+3. [Tecnologías](#tecnologías)
 
-## Análisis de las Funcionalidades
 
-- Creación de perfil: El usuario podrá registrarse en la aplicación y asi obtener un perfil, en donde se guardara su registro.
+## Funcionalidades
 
-- Inicio de sesión (Usuario/Administrador): La plataforma contendra un inicio de sesión donde se pedirá correo electronico y contraseña.
+- Creación de perfil.
 
-- Editar perfil:  El usuario tendra un menú de configuraciones, en este podrá visualizar su gestión de actividades, visualizar su solicitud de asesoramiento, eliminar su cuenta o modificar sus datos personales.
+- Inicio de sesión.
   
-- Sección de noticias: DoSports contará con una sección de noticias, donde se podrán mantener informados los usuarios sobre las últimas novedades/actualizaciones del acontecer nacional de deportes, a través de la conexión con un sitio de noticias.
+- Sección de noticias.
+  
+- Asesoramiento.
 
-- Gestión de sesiones de asesoramiento: Los administradores tendrán la capacidad de gestionar sesiones a través de la aplicación, incluyendo la posibilidad de ofrecer horario disponible para realizar asesoramiento, cancelar un hora y confirmar nuevas horas.
+- Buscador.
 
-- Solicitud de asesoramiento: Los usuarios tendran la opción de solicitar asesoramiento, esto se realizará a través del llenado de formulario, notificandolos en su correo cuando se les agende una hora.
+- Inscripción de Actividad.
 
-- Buscador: Los usuarios podran buscar en la aplicación actividades específicas a través de una barra buscadora, esta no contempla filtros o categorias.
+- Información de Actividades.
 
-- Gestión de Actividades Deportivas (Usuario/Administrador): Los usuarios podrán gestionar sus actividades deportivas a través de la aplicación, lo que les permitirá inscribirse en nuevas actividades o eliminar su participación en las existentes.
+- Foro.
 
-- Foro: Donde los usuarios podrán discutir temas relacionados con deportes.
+- Historial de actividades.
 
-- Historial de actividades y sesiones: El usuario tendrá acceso a un historial de actividades deportivas en las que ha participado.
+## Propuesta y Justificación
 
-## Modelo de la base de datos
+Trabajaremos con una base de datos relacional y como motor de base de datos a ocupar es **MySQL**, ya que el sistema requiere la gestión de datos interrelacionados, como las actividades a las que un usuario se puede inscribir o las publicaciones que realiza en el foro, una base de datos relacionales como MySQL es ideal para esto.
 
-El motor de base de datos a ocupar es **MySQL**, ya que el sistema requiere la gestión de datos interrelacionados, como las actividades a las que un usuario se puede inscribir o las publicaciones que realiza en el foro, una base de datos relacionales como MySQL es ideal para esto.
+Para la definición del modelo de base de datos, se ha diseñado un diagrama que incluye múltiples tablas relacionadas, las cuales están alineadas con los requerimientos del sistema mencionadas en el punto anterior. Las entidades principales del modelo son Usuario , Actividad , Asesoramiento , Inscripción a Actividades, Noticias, Publicación en Foro y Historial. 
 
-Para la definición del modelo de base de datos, se ha diseñado un diagrama que incluye múltiples tablas relacionadas, las cuales están alineadas con los requerimientos funcionales del sistema mencionadas en el punto anterior. Las entidades principales del modelo son Usuario , Perfil , Actividad , Asesoramiento , Inscripción a Actividades , Publicación en Foro. hay que tener en cuenta que en la entidad **Usuario** el atributo **tipoUsuario** definira **si es administrador o no**, por ende **si es administrador el usuario podra gestionar: Noticias, Actividad, Foro y Asesoramiento.**
+**MySQL** es especialmente adecuado porque permite garantizar la integridad referencial entre las entidades a través de claves foráneas, manteniendo datos consistentes y evitando duplicaciones. Además, soporta consultas SQL complejas que son clave para funcionalidades como el buscador y el historial de actividades, mientras que su escalabilidad y rendimiento aseguran que la aplicación pueda crecer sin comprometer la eficiencia. Finalmente, MySQL ofrece robustas características de seguridad, protegiendo los datos sensibles de los usuarios, lo que es fundamental para una aplicación móvil como **DoSports**.
 
-![WhatsApp Image 2024-10-15 at 12 11 04](https://github.com/user-attachments/assets/a1804da3-604d-4281-a00e-f395f3e7652a)
-
-![WhatsApp Image 2024-10-15 at 12 10 47](https://github.com/user-attachments/assets/83929810-6e54-40e2-aba8-2d409ae512a8)
-
-
-## Prototipado en Figma
-
-[Prototipo Wireframe](https://www.figma.com/design/OhpDLO1HikjoKl7ndrjHzc/DoSports?node-id=11-27&t=rvU3IIRrJTx0IBBJ-1)
-
-## Maquetación Responsiva
-La aplicación será desarrollada con HTML5, CSS3 y JavaScript, utilizando frameworks como Bootstrap para la
-maquetación responsiva.
+[Modelo de la BD](SegundaEntrega/Dosports/MER.jpeg)
+[Esquema Relaciona](SegundaEntrega/Dosports/ER.jpeg)
 
 ## Tecnologías
 ![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=flat&logo=ionic&logoColor=white)
