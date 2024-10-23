@@ -13,38 +13,33 @@ Incluyendo una sección de comunicación, donde los usuarios pueden solicitar as
 
 ## Tabla de Contenidos
 
-1. [Análisis de las Funcionalidades](#análisisdelasfuncionalidades)
-2. [Prototipado Figma](#prototipadofigma)
-3. [Maquetación Responsiva](#maquetaciónresponsiva)
-4. [Tecnologías](#tecnologías)
+1. [Funcionalidades](#funcionalidades)
+2. [Prototipado En Figma](#prototipado-en-figma)
+3. [Tecnologías](#tecnologías)
 
-## Análisis de las Funcionalidades
+## Funcionalidades
 
-- Creación de perfil: El usuario podrá registrarse en la aplicación y asi obtener un perfil, en donde se guardara su registro.
+- Creación de perfil.
 
-- Inicio de sesión (Usuario/Administrador): La plataforma contendra un inicio de sesión donde se pedirá correo electronico y contraseña.
+- Inicio de sesión.
   
-- Sección de noticias: DoSports contará con una sección de noticias, donde se podrán mantener informados los usuarios sobre las últimas novedades/actualizaciones del acontecer nacional de deportes, a través de la conexión con un sitio de noticias.
+- Sección de noticias.
+  
+- Asesoramiento.
 
-- Gestión de sesiones de asesoramiento: Los administradores tendrán la capacidad de gestionar sesiones a través de la aplicación, incluyendo la posibilidad de ofrecer horario disponible para realizar asesoramiento, cancelar un hora y confirmar nuevas horas.
+- Buscador.
 
-- Solicitud de asesoramiento: Los usuarios tendran la opción de solicitar asesoramiento, esto se realizará a través del llenado de formulario, notificandolos en su correo cuando se les agende una hora.
+- Inscripción de Actividad.
 
-- Buscador: Los usuarios podran buscar en la aplicación actividades específicas a través de una barra buscadora, esta no contempla filtros o categorias.
+- Información de Actividades.
 
-- Gestión de Actividades Deportivas (Usuario/Administrador): Los usuarios podrán gestionar sus actividades deportivas a través de la aplicación, lo que les permitirá inscribirse en nuevas actividades o eliminar su participación en las existentes.
+- Foro.
 
-- Foro: Donde los usuarios podrán discutir temas relacionados con deportes.
-
-- Historial de actividades y sesiones: El usuario tendrá acceso a un historial de actividades deportivas en las que ha participado.
+- Historial de actividades.
 
 ## Prototipado en Figma
 
 [Prototipo Wireframe](https://www.figma.com/design/OhpDLO1HikjoKl7ndrjHzc/DoSports?node-id=11-27&t=rvU3IIRrJTx0IBBJ-1)
-
-## Maquetación Responsiva
-La aplicación será desarrollada con HTML5, CSS3 y JavaScript, utilizando frameworks como Bootstrap para la
-maquetación responsiva.
 
 ## Tecnologías
 ![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=flat&logo=ionic&logoColor=white)
