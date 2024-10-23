@@ -1,0 +1,20 @@
+.comments-container {
+    max-width: 800px;
+    margin: 0 auto;  /* Esto centra el contenido */
+    padding: 20px;
+  }
+  
+  .comment-card {
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  
+  .add-comment-card {
+    margin-top: 20px;
+    padding: 15px;
+  }
+  
+  .reply-item {
+    padding-left: 15px;
+  }
+  

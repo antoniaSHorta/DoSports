@@ -22,7 +22,7 @@
 }
 
 .letras{
-   --color: black;
+   color: black;
    width: 100%;
    font-size: 17px;
    margin-left: 20px;

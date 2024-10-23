@@ -1,0 +1,34 @@
+[
+    {
+      "id": 1,
+      "image": "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+      "title": "Fútbol",
+      "resumen": "Discusión sobre el fútbol en la universidad",
+      "comments": [
+        {
+          "id": 1,
+          "text": "Me encanta el equipo de fútbol de la universidad, siempre nos representa bien.",
+          "replies": ["¡Totalmente de acuerdo!", "¡Vamos equipo!"]
+        },
+        {
+          "id": 2,
+          "text": "El último partido fue increíble, ¿alguien fue?",
+          "replies": ["Yo fui, estuvo muy emocionante.", "Sí, el ambiente fue increíble."]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "image": "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+      "title": "Baloncesto",
+      "resumen": "Discusión sobre el baloncesto en la universidad",
+      "comments": [
+        {
+          "id": 1,
+          "text": "El equipo de baloncesto está mejorando mucho este año.",
+          "replies": ["Sí, los nuevos jugadores son muy buenos.", "¡Vamos por el campeonato!"]
+        }
+      ]
+    }
+  ]
+  

@@ -1,0 +1,15 @@
+.custom-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .custom-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px; /* Altura fija */
+  }

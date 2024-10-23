@@ -1,19 +1,40 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import Navbar from '../components/Navegationbar';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonThumbnail } from '@ionic/react';
+import deportesData from '../assets/deportes.json'; // Importamos el JSON
+import { useHistory } from 'react-router-dom';
 import Head from '../components/HeadIcon';
+import Navbar from '../components/Navegationbar';
 
-const Foro: React.FC = () => {
+import './Foro.css';
+
+const DeportesList: React.FC = () => {
+  const history = useHistory();
+
+  const goToForo = (id: number) => {
+    history.push(`/foro/${id}`);
+  };
+
   return (
     <IonPage>
-    <Head /> 
+      <Head />
       <IonContent>
-        <p>Bienvenido al foro! Comparte y discute temas aquí.</p>
+        <div className="custom-card-container">
+          {deportesData.map(deporte => (
+            <IonCard className="custom-card" key={deporte.id}>
+              <IonCardHeader>
+                <IonCardTitle>{deporte.title}</IonCardTitle>
+              </IonCardHeader>
+              <IonCardContent>
+                <p>{deporte.resumen}</p>
+                <IonButton onClick={() => goToForo(deporte.id)}>Ver Foro</IonButton>
+              </IonCardContent>
+            </IonCard>
+          ))}
+        </div>
       </IonContent>
-      <Navbar></Navbar>
-
+      <Navbar />
     </IonPage>
   );
 };
 
-export default Foro;
+export default DeportesList;
