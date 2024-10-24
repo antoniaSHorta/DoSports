@@ -1,7 +1,8 @@
 .comments-container {
     max-width: 800px;
-    margin: 0 auto;  /* Esto centra el contenido */
+    margin: 0 auto; 
     padding: 20px;
+    margin-top: 0px;
   }
   
   .comment-card {
@@ -17,4 +18,5 @@
   .reply-item {
     padding-left: 15px;
   }
+  
   

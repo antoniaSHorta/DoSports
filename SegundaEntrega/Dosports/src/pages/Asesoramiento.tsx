@@ -21,6 +21,11 @@ const Asesoramiento: React.FC = () => {
     return emailRegex.test(correo);
   };
 
+  const validarFecha = (fecha: string) => {
+    const fechaRegex = /^\d{4}-\d{2}-\d{2}$/;
+    return fechaRegex.test(fecha);
+  };
+
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setAsesoramientoData({
@@ -57,7 +62,10 @@ const Asesoramiento: React.FC = () => {
     if (!validarCorreo(data.email)) {
       return 'El formato del correo no es válido';
     }
-    return ''; 
+    if (!validarFecha(data.fecha)) {
+      return 'El formato de la fecha debe ser YYYY-MM-DD';
+    }
+    return '';
   };
 
   return (
@@ -92,10 +100,10 @@ const Asesoramiento: React.FC = () => {
               <IonItem className="asesoramiento-form-item">
                 <IonLabel position="stacked">Fecha</IonLabel>
                 <IonInput
-                  type="date"
+                  type="text"
                   name="fecha"
                   value={asesoramientoData.fecha}
-                  placeholder="Selecciona una fecha"
+                  placeholder="DD/MM/AAAA"
                   onIonChange={handleChange}
                 />
               </IonItem>

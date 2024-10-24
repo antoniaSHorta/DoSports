@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { IonPage, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonItem, IonLabel, IonButton, IonTextarea, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
+import { IonPage, IonContent, IonCard,IonItemDivider, IonToast,IonCardContent, IonCardHeader, IonCardTitle, IonItem, IonLabel, IonButton, IonTextarea, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
 import deportesData from '../assets/deportes.json';  
 import './comentarios.css';  
 
@@ -12,6 +12,8 @@ const Comentarios: React.FC = () => {
   const foro = deportesData.find(f => f.id === parseInt(id));
 
   const [replies, setReplies] = useState<{ [key: number]: string }>({});
+  const [showToast, setShowToast] = useState(false); 
+  const [toastMessage, setToastMessage] = useState(''); 
 
   const handleReplyChange = (commentId: number, value: string) => {
     setReplies(prevReplies => ({
@@ -31,12 +33,16 @@ const Comentarios: React.FC = () => {
         ...prevReplies,
         [commentId]: ''
       }));
+      setToastMessage(`Respuesta agregada al comentario #${commentId}`);
+      setShowToast(true);
       console.log(`Respuesta agregada al comentario #${commentId}`);
     }
   };
 
   const handleAddComment = () => {
     console.log("Comentario agregado");
+    setToastMessage('Su comentario se ha agregado con éxito');  
+    setShowToast(true);
   };
 
   if (!foro) {
@@ -46,12 +52,11 @@ const Comentarios: React.FC = () => {
   return (
     <IonPage>
       <Head />
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>{foro.title}</IonTitle> {/* Muestra el título del foro */}
-        </IonToolbar>
-      </IonHeader>
       <IonContent className="ion-padding">
+        <IonTitle style={{ fontSize: '20px', color: 'black' ,fontFamily: "Merriweather",marginTop:'35px',marginBottom:'0px'}}>
+        {"¡ "+ "Bienvenido al foro sobre " + foro.title + " !"}
+        </IonTitle>
+      <IonItemDivider style ={{marginBottom:'0px'}}/>
         <div className="comments-container">
           <IonCard className="add-comment-card">
             <IonCardHeader>
@@ -100,6 +105,14 @@ const Comentarios: React.FC = () => {
             </IonCard>
           ))}
         </div>
+        <IonToast
+          isOpen={showToast}
+          message={toastMessage}
+          duration={2000}  
+          onDidDismiss={() => setShowToast(false)} 
+          position="bottom"  
+          color="success"
+        />
       </IonContent>
       <Navbar />
     </IonPage>

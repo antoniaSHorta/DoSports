@@ -43,7 +43,7 @@
 }
 
 .asesoramiento-button {
-    --background: #0000ff; /* Puedes cambiar este color si lo deseas */
+    --background: #0000ff; 
     --border-radius: 40px;
     width: 80%;
     font-size: 17px;

@@ -6,8 +6,8 @@ import Inicio from './pages/Inicio';
 import Actividades from './pages/Actividades';
 import Buscar from './pages/Buscador';
 import Noticias from './pages/Noticias';
-import Foro from './pages/Foro';  // Página que muestra todos los foros
-import Comentarios from './pages/Comentarios'; // Página para mostrar comentarios de un foro específico
+import Foro from './pages/Foro';  
+import Comentarios from './pages/Comentarios'; 
 import Cuenta from './pages/Cuenta';
 import IniciarSesion from './pages/IniciarSesion';
 import Registro from './pages/Registro';
@@ -47,7 +47,8 @@ const App: React.FC = () => (
           <Noticias/>
         </Route>
         <Route exact path="/foro">
-          <Foro/>  {/* Muestra todos los foros */}
+          <Foro/>  
+        
         </Route>
         <Route exact path="/registro">
           <Registro/>
@@ -68,7 +69,6 @@ const App: React.FC = () => (
           <Asesoramiento/>
         </Route>
 
-        {/* Ruta dinámica para mostrar los comentarios de un foro específico */}
         <Route path="/foro/:id" component={Comentarios} />
 
         <Route path="/actividad/:id" component={Actividad} />

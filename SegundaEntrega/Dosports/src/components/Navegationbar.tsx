@@ -15,7 +15,9 @@ function Navbar() {
         return location.pathname === '/noticias' || location.pathname.startsWith('/noticia'); 
       case '/cuenta':
         return location.pathname === '/cuenta'|| location.pathname.startsWith('/asesoramiento')|| location.pathname.startsWith('/historial'); 
-
+      case '/foro': 
+      return location.pathname === '/foro'|| location.pathname.startsWith('/foro');
+        
     }
   };
 
@@ -60,7 +62,7 @@ function Navbar() {
       <IonTabButton
         tab="foro"
         onClick={() => history.push('/foro')}
-        style={{ color: location.pathname === '/foro' ? 'blue' : 'gray' }} 
+        style={{ color: isActive('/foro') ? 'blue' : 'gray' }} 
       >
         <IonIcon icon={chatbubbles} />
         <IonLabel>Foro</IonLabel>
