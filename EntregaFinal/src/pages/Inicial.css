@@ -1,0 +1,52 @@
+.contenido{
+    --background: rgb(3, 8, 37);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height:100vh;
+}
+.contenidoCentro{
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.titulo{
+    font-family: "Gill Sans", sans-serif; 
+    font-weight: 800; 
+    color: white;
+    font-size: 60px; 
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+  
+.botonIniciar{
+    --border-radius: 20px;
+    --background: white;
+    letter-spacing: 0px;
+    --color: black;
+    width: 400px;
+    font-size: 17px;
+    text-transform: none;
+}
+
+.crearCuenta{
+    color: white;
+    position:fixed;
+    left:0px;
+    bottom:10px;
+    height:40px;
+    width:100%;
+    font-size: 17px;
+}
+  
+.crear {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+  
