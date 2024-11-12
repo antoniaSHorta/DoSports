@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import { IonContent, IonPage,IonCard, IonCardContent,IonItem,IonLabel,IonSelect,IonSelectOption,IonInput,IonText,IonButton} from '@ionic/react';
+import { IonContent,IonPage,IonCard, IonCardContent,IonItem,IonLabel,IonSelect,IonSelectOption,IonInput,IonText,IonButton} from '@ionic/react';
 import './Registrar.css';
 import Head from '../components/HeadIcon';
 import { useHistory } from 'react-router-dom';
@@ -11,12 +11,14 @@ const Registrar: React.FC = () => {
         comuna: '',
         usuario: '',
         correo: '',
-        password: '',
-        confirmPassword: ''
+        contrasena: '',
+        confirmarContrasena: ''
       });
     
       const [error, setError] = useState('');
     
+      const [mensaje, setMensaje] = useState('');
+
       const validarCorreo = (correo: string) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(correo);
@@ -29,22 +31,47 @@ const Registrar: React.FC = () => {
           [name]: value
         });
       };
-      const handleRegister = () => {
-        if (!userData.region || !userData.correo || !userData.comuna || !userData.usuario || !userData.password || !userData.confirmPassword) {
+      const handleRegister = async () => {
+        if (!userData.region || !userData.correo || !userData.comuna || !userData.usuario || !userData.contrasena || !userData.confirmarContrasena) {
           setError('Por favor completa todos los campos');
-        } else if (!validarCorreo(userData.correo)) {
-            setError('El formato del correo no es válido');
-        } else if (userData.password.length < 6) {
+        } 
+        else if (!validarCorreo(userData.correo)) {
+          setError('El formato del correo no es válido');
+        } 
+        else if (userData.contrasena.length < 6) {
           setError('La contraseña debe tener al menos 6 caracteres');
-        } else if (userData.password !== userData.confirmPassword) {
+        } 
+        else if (userData.contrasena !== userData.confirmarContrasena) {
           setError('Las contraseñas no coinciden');
-        } else {
+        }
+        else {
           setError('');
-          console.log('Datos de registro:', userData);
-          history.push('/inicio');
+          try{
+
+            const response = await fetch('http://localhost:3000/api/autenticacion/register', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(userData)
+            });
+            const data = await response.json();
+
+            if(response.ok){
+              console.log('Se ha creado su cuenta exitosamente',data);
+              setMensaje("Se ha creado su cuenta exitosamente, redirigiendo a la página de inicio de sesión...");
+              await new Promise(resolve => setTimeout(resolve, 2000));
+                history.push('/iniciosesion');
+            }
+
+            else{
+              setError(data.message || 'Error al crear la cuenta');
+            }
+
+          }catch(error){
+            setError('Error al conectar');
+          }
           
         }
-      }
+      };
 
       return (
         <IonPage>
@@ -114,8 +141,8 @@ const Registrar: React.FC = () => {
                     <IonLabel position="stacked">Contraseña</IonLabel>
                     <IonInput
                       type="password"
-                      name="password"
-                      value={userData.password}
+                      name="contrasena"
+                      value={userData.contrasena}
                       placeholder="Ingresa tu contraseña"
                       onIonChange={handleChange}
                     />
@@ -125,8 +152,8 @@ const Registrar: React.FC = () => {
                     <IonLabel position="stacked">Confirmar Contraseña</IonLabel>
                     <IonInput
                       type="password"
-                      name="confirmPassword"
-                      value={userData.confirmPassword}
+                      name="confirmarContrasena"
+                      value={userData.confirmarContrasena}
                       placeholder="Confirma tu contraseña"
                       onIonChange={handleChange}
                     />
@@ -136,6 +163,14 @@ const Registrar: React.FC = () => {
                     <div className="registro-error-container">
                       <IonText color="danger">
                         <p className="registro-error-message">{error}</p>
+                      </IonText>
+                    </div>
+                  )}
+
+                  {mensaje && (
+                    <div className="registro-mensaje-container">
+                      <IonText color="success">
+                        <p className="registro-mensaje">{mensaje}</p>
                       </IonText>
                     </div>
                   )}

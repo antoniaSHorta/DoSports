@@ -4,13 +4,20 @@ import bodyparser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 
+// IMPORTAR RUTAS DE AUTENTICACION
+import autenticacionRutas from './routes/autenticacionRutas.js';
+
+
+dotenv.config();
+
 const app = express();
-const PORT = 3306;
+const PORT = 3000;
+
+// MIDDLEWARES
 
 app.use(cors());
 app.use(bodyparser.json());
 
-dotenv.config();
 
 //CONEXION DB
 
@@ -29,11 +36,35 @@ const conexion = mysql.createConnection({
 conexion.connect((error)=>{
     if(error){
         console.log("NO SE PUDO CONECTAR A DB",error);
-        return;
+        process.exit();
     }
     console.log("SI SE PUDO CONECTAR A DB");
 })
 
+// CONEXIONES AL MODELO
+
+app.set("dbConnection",conexion);
+app.use('/api/autenticacion', autenticacionRutas);
+
+
+// INICIAR SERVIDOR
+
 app.listen(PORT,()=>{
-    console.log("SERVIDOR ARRIBA");
-})
+    console.log(`SERVIDOR ARRIBA ${PORT}`);
+});
+
+
+// CERRAR CONEXION
+
+process.on("SIGINT", () => {
+    console.log("CERRANDO SERVIDOR");
+    conexion.end((err) => {
+        if(err) {
+            console.log("ERROR AL CERRAR LA CONEXION",err);
+        }
+        else{
+            console.log("SE CERRO CONEXION");
+        }
+        process.exit();
+    });
+});

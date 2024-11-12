@@ -1,0 +1,53 @@
+.contenido{
+    --background: rgb(3, 8, 37);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height:100vh;
+}
+.contenidoCentro{
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.titulo{
+    font-family: "Merriweather", sans-serif; 
+    font-weight: 900; 
+    font-style: normal; 
+    color: white;
+    font-size: 50px; 
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    --text-transform: none;
+}
+  
+.botonIniciar{
+    --border-radius: 20px;
+    --background: white;
+    --color: black;
+    width: 400px;
+    font-size: 17px;
+    margin-bottom: 1.5rem;
+    text-transform: none;
+
+}
+
+.crearCuenta{
+    color: white;
+    position:fixed;
+    left:0px;
+    bottom:10px;
+    height:40px;
+    width:100%;
+    font-size: 17px;
+}
+  
+.crearCuenta a {
+    color: red;
+    text-decoration: none;
+    
+}

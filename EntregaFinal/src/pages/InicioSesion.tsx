@@ -1,17 +1,22 @@
 import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { IonContent, IonPage,IonCard, IonCardContent,IonItem,IonLabel,IonInput,IonText,IonButton} from '@ionic/react';
+import { IonContent, IonPage,IonCard, IonRouterLink, IonCardContent,IonItem,IonLabel,IonInput,IonText,IonButton} from '@ionic/react';
 
 import Head from '../components/HeadIcon';
 import './InicioSesion.css';
 
 const InicioSesion: React.FC = () =>{
     const history = useHistory();
+
+    const IrRegistro = () =>{
+      history.push('/registrar')
+    };
     const [credentials, setCredentials] = useState({
       usuario: '',
-      password: '',
+      contrasena: '',
     });
+
     
     const [error, setError] = useState('');
   
@@ -23,16 +28,36 @@ const InicioSesion: React.FC = () =>{
       });
     };
   
-    const handleLogin = () => {
-      if (!credentials.usuario || !credentials.password) {
+    const handleLogin = async () => {
+      if (!credentials.usuario || !credentials.contrasena) {
         setError('Por favor completa todos los campos');
-      } else {
+      } 
+      else {
         setError('');
-        console.log('Datos de inicio de sesión:', credentials);
+        try{
+          const response = await fetch('http://localhost:3000/api/autenticacion/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(credentials)
+        });
         
-        history.push('/inicio'); 
+          
+          const data = await  response.json();
+
+          if(response.ok){
+            console.log('Inicio de sesion exitoso:', data);
+            history.push('/home');
+          }
+          else{
+            setError(data.message || 'Error al iniciar sesión');
+          }
+        } catch (error){
+          setError('Error al conectar con el servidor');
+        }
       }
     };
+
+    
   
     return (
       <IonPage>
@@ -56,8 +81,8 @@ const InicioSesion: React.FC = () =>{
                   <IonLabel position="stacked">Contraseña</IonLabel>
                   <IonInput
                     type="password"
-                    name="password"
-                    value={credentials.password}
+                    name="contrasena"
+                    value={credentials.contrasena}
                     placeholder="Ingresa tu contraseña"
                     onIonChange={handleChange}
                   />
@@ -79,6 +104,8 @@ const InicioSesion: React.FC = () =>{
               </IonCardContent>
             </IonCard>
           </div>
+          <IonText className="crearCuentaInicio">¿No tienes una cuenta?<IonRouterLink onClick={IrRegistro} className= "crear" > Crear Cuenta</IonRouterLink>
+        </IonText>
         </IonContent>
       </IonPage>
     );
