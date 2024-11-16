@@ -1,0 +1,29 @@
+.asesoramiento-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .asesoramiento-card {
+    border-radius: 15px;
+  }
+  
+  .mensaje-error {
+    color: #e53e3e;
+    background-color: #fff5f5;
+    border: 1px solid #fed7d7;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+    text-align: center;
+  }
+  
+  .mensaje-exito {
+    color: #38a169;
+    background-color: #f0fff4;
+    border: 1px solid #c6f6d5;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+    text-align: center;
+  }

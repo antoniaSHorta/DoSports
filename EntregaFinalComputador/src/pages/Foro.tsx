@@ -1,0 +1,90 @@
+import React, { useEffect, useState } from "react";
+import { IonPage, IonContent,IonCard,IonCardHeader,IonCardTitle,IonCardContent,IonButton,IonInput,IonTextarea,IonList,IonItem,IonLabel,IonFab,IonFabButton,IonIcon,IonModal,IonCardSubtitle,useIonRouter} from "@ionic/react";
+import Navbar from "../components/Navegationbar";
+import Head from '../components/HeadIcon';
+import './Foro.css';
+
+interface Foro {
+  idForo: number;
+  titulo: string;
+  descripcion: string;
+}
+
+const Foro: React.FC = () => {
+  const [foros, setForos] = useState<Foro[]>([]);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
+  const router = useIonRouter();
+
+  useEffect(() => {
+    cargarForos();
+  }, []);
+
+  const cargarForos = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch('http://localhost:3000/api/foro/foros');
+      if (!response.ok) throw new Error('Error al cargar foros');
+      const data = await response.json();
+      setForos(data);
+    } catch (error) {
+      console.error('Error:', error);
+      setError('Error al cargar los foros');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <IonPage>
+        <Head />
+        <IonContent>
+          <h2 style={{marginLeft:'20px'}}>Cargando...</h2>
+        </IonContent>
+        <Navbar />
+      </IonPage>
+    );
+  }
+
+  if (error) {
+    return (
+      <IonPage>
+        <Head />
+        <IonContent>
+          <h2 style={{marginLeft:'20px'}}>Error: {error}</h2>
+        </IonContent>
+        <Navbar />
+      </IonPage>
+    );
+  }
+
+  return (
+    <IonPage>
+      <Head />
+      <IonContent>
+        <div className="foro-container">
+          {foros.map((foro) => (
+            <IonCard key={foro.idForo}>
+              <IonCardHeader>
+                <IonCardTitle>{foro.titulo}</IonCardTitle>
+              </IonCardHeader>
+              <IonCardContent>
+                <p style={{marginBottom:'20px'}}>{foro.descripcion}</p>
+                <IonButton 
+                  expand="block"
+                  onClick={() => router.push(`/foro/${foro.idForo}`)}
+                >
+                  Entrar al foro
+                </IonButton>
+              </IonCardContent>
+            </IonCard>
+          ))}
+        </div>
+      </IonContent>
+      <Navbar />
+    </IonPage>
+  );
+};
+
+export default Foro;

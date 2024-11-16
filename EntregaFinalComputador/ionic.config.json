@@ -1,0 +1,7 @@
+{
+  "name": "EntregaFinal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
