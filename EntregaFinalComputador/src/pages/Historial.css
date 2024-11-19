@@ -1,44 +1,95 @@
 .historial-container {
   padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
-.historial-titulo {
+.historial-title {
   text-align: center;
-  color: #000000;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  padding-bottom: 10px;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-
-.historial-card {
+.actividad-card {
   margin-bottom: 15px;
   border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.estado-badge {
+.actividad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.actividad-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.actividad-fecha {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0;
+}
+
+ion-badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+.boton-cancelar-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  border-radius: 50px;
+}
+
+.boton-cancelar {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+  font-size: 13px;
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: normal;
+  height: 30px;
+  margin: 0;
+  --border-radius: 40px;
+  float: right;
+}
+
+.mensaje-error,
+.mensaje-exito {
+  text-align: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.mensaje-error {
+  background-color: rgba(var(--ion-color-danger-rgb), 0.1);
+}
+
+.mensaje-exito {
+  background-color: rgba(var(--ion-color-success-rgb), 0.1);
+}
+
+.estado-badgel {
   display: inline-block;
   padding: 5px 10px;
   border-radius: 15px;
   font-size: 0.9em;
   font-weight: bold;
+  margin-top: 10px;
 }
+
 
 .estado-badge.terminada {
-  background-color: #dc3545;
-  color: white;
-}
-
-.estado-badge.pendiente {
   background-color: #28a745;
   color: white;
-}
-
-.no-actividades {
-  text-align: center;
-  color: #666;
-  margin-top: 40px;
-  font-size: 1.1em;
 }

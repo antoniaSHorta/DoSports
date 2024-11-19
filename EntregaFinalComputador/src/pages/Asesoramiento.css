@@ -28,7 +28,7 @@
 
 .estado-badge.pendiente {
   background-color: #ffc107;
-  color: black;
+  color: white;
 }
 
 .estado-badge.confirmada {

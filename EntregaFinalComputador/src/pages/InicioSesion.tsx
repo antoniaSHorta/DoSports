@@ -1,63 +1,44 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState} from 'react';
+import { IonContent, IonPage,IonText, IonRouterLink,IonCardContent,IonCard,IonInput, IonButton, IonItem, IonLabel } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-import { IonContent, IonPage,IonCard, IonRouterLink, IonCardContent,IonItem,IonLabel,IonInput,IonText,IonButton} from '@ionic/react';
-
 import Head from '../components/HeadIcon';
 import './InicioSesion.css';
 
-const InicioSesion: React.FC = () =>{
-    const history = useHistory();
-
-    const IrRegistro = () =>{
-      history.push('/registrar')
-    };
-    const [credentials, setCredentials] = useState({
-      usuario: '',
-      contrasena: '',
-    });
-
-    
+const InicioSesion: React.FC = () => {
+    const [usuario, setUsuario] = useState('');
+    const [contrasena, setContrasena] = useState('');
     const [error, setError] = useState('');
+    const history = useHistory();
   
-    const handleChange = (e: any) => {
-      const { name, value } = e.target;
-      setCredentials({
-        ...credentials,
-        [name]: value
-      });
-    };
-  
-    const handleLogin = async () => {
-      if (!credentials.usuario || !credentials.contrasena) {
-        setError('Por favor completa todos los campos');
-      } 
-      else {
-        setError('');
-        try{
-          const response = await fetch('http://localhost:3000/api/autenticacion/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(credentials)
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      
+      try 
+      {
+        const response = await fetch('http://localhost:3000/api/login', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json',},
+          body: JSON.stringify({ usuario, contrasena }),
         });
-        
-          
-          const data = await  response.json();
+  
+        const data = await response.json();
+  
+        if (response.ok) {
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('usuario', JSON.stringify(data.usuario));
+          history.push('/home');
+        } 
 
-          if(response.ok){
-            localStorage.setItem('usuario', JSON.stringify(data.usuario));
-            history.push('/home');
-        } else {
-            setError(data.message || 'Error al iniciar sesión');
+        else 
+        {
+          setError(data.message);
         }
-        } catch (error){
-          setError('Error al conectar con el servidor');
-        }
+      } catch (error) {
+        setError('Error al conectar con el servidor');
       }
     };
-
     
-  
+    // INICIO FRONT END IONIC //
     return (
       <IonPage>
         <Head />
@@ -67,24 +48,12 @@ const InicioSesion: React.FC = () =>{
               <IonCardContent>
                 <IonItem className="login-form-item">
                   <IonLabel position="stacked">Usuario</IonLabel>
-                  <IonInput
-                    type="text"
-                    name="usuario"
-                    value={credentials.usuario}
-                    placeholder="Ingresa tu nombre de usuario"
-                    onIonChange={handleChange}
-                  />
+                  <IonInput type="text" value={usuario} placeholder="Ingresa tu usuario" onIonChange={e => setUsuario(e.detail.value!)} required/>
                 </IonItem>
   
                 <IonItem className="login-form-item">
                   <IonLabel position="stacked">Contraseña</IonLabel>
-                  <IonInput
-                    type="password"
-                    name="contrasena"
-                    value={credentials.contrasena}
-                    placeholder="Ingresa tu contraseña"
-                    onIonChange={handleChange}
-                  />
+                  <IonInput type="password" value={contrasena} placeholder="Ingresa tu contraseña" onIonChange={e => setContrasena(e.detail.value!)} required />
                 </IonItem>
   
                 {error && (
@@ -94,20 +63,17 @@ const InicioSesion: React.FC = () =>{
                     </IonText>
                   </div>
                 )}
-  
+
                 <div className="login-button-container">
-                  <IonButton className="login-button" expand="block" onClick={handleLogin}>
-                    Iniciar Sesión
-                  </IonButton>
+                <IonButton className="login-button" expand="block" onClick={handleSubmit}>Iniciar Sesión</IonButton>
                 </div>
               </IonCardContent>
             </IonCard>
           </div>
-          <IonText className="crearCuentaInicio">¿No tienes una cuenta?<IonRouterLink onClick={IrRegistro} className= "crear" > Crear Cuenta</IonRouterLink>
-        </IonText>
+          <IonText className="crearCuentaInicio">¿No tienes una cuenta?<IonRouterLink onClick={() => history.push('/registrar')} className= "crear" > Crear Cuenta</IonRouterLink></IonText>
         </IonContent>
       </IonPage>
     );
   };
-
-export default InicioSesion;
+  
+  export default InicioSesion;

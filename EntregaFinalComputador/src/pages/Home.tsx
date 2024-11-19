@@ -48,22 +48,22 @@ const Home: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-      const cargarDatos = async () => {
-          try {
-              setLoading(true);
-              const respuestaNoticias = await fetch('http://localhost:3000/api/noticias/destacadas');
-              if (!respuestaNoticias.ok) {
-                  throw new Error('Error al cargar las noticias');
-              }
-              const dataNoticias = await respuestaNoticias.json();
-              setNoticias(dataNoticias);
-          } catch (error) {
-              console.error('Error al cargar datos:', error);
-              setError(error instanceof Error ? error.message : 'Error al cargar los datos');
-          } finally {
-              setLoading(false);
+    const cargarDatos = async () => {
+      try {
+          setLoading(true);
+          const respuestaNoticias = await fetch('http://localhost:3000/api/noticias/destacadas');
+          if (!respuestaNoticias.ok) {
+              throw new Error('Error al cargar las noticias');
           }
-      };
+          const dataNoticias = await respuestaNoticias.json();
+          setNoticias(dataNoticias);
+      } catch (error) {
+          console.error('Error al cargar datos:', error);
+          setError(error instanceof Error ? error.message : 'Error al cargar los datos');
+      } finally {
+          setLoading(false);
+      }
+  };
 
       cargarDatos();
   }, []);
@@ -131,7 +131,7 @@ const Home: React.FC = () => {
                     noticias.map((noticia) => (
                         <IonCard key={noticia.idNoticias} className="noticia-card">
                             <IonCardHeader>
-                                <IonCardTitle>{noticia.title}</IonCardTitle>
+                                <IonCardTitle className='tituloHome'>{noticia.title}</IonCardTitle>
                             </IonCardHeader>
                             <IonCardContent>
                                 <IonThumbnail style ={{marginBottom:'20px'}}slot="start">

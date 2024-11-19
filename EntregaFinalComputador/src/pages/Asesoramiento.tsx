@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { IonContent, IonPage, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonTextarea, IonSelect, IonSelectOption, IonLabel, IonItem, IonModal, IonFab, IonFabButton, IonIcon,IonCardSubtitle } from '@ionic/react';
+import { IonContent, IonPage, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonTextarea, IonSelect, IonSelectOption, IonLabel, IonItem, IonModal, IonFab, IonFabButton, IonIcon, IonCardSubtitle } from '@ionic/react';
 import { add } from 'ionicons/icons';
+import { useHistory } from 'react-router-dom';
 import Navbar from '../components/Navegationbar';
 import Head from '../components/HeadIcon';
 import './Asesoramiento.css';
@@ -25,51 +26,100 @@ const Asesoramiento: React.FC = () => {
   const [mensaje, setMensaje] = useState('');
   const [error, setError] = useState('');
   const [horariosDisponibles, setHorariosDisponibles] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+  const history = useHistory();
 
   useEffect(() => {
     cargarConsultas();
     cargarHorariosDisponibles();
   }, []);
 
-  const cargarConsultas = async () => {
-    const usuarioActual = localStorage.getItem('usuario')
-      ? JSON.parse(localStorage.getItem('usuario') || '{}')
-      : null;
-
-    if (!usuarioActual?.id) return;
+  const verificarAutenticacion = () => {
+    const token = localStorage.getItem('token');
+    const usuarioString = localStorage.getItem('usuario');
+    
+    if (!token || !usuarioString) {
+      history.push('/iniciosesion');
+      return null;
+    }
 
     try {
-      const response = await fetch(`http://localhost:3000/api/asesoramiento/consultas/${usuarioActual.id}`);
-      if (!response.ok) throw new Error('Error al cargar consultas');
-      const data = await response.json();
-      setConsultas(data);
+      const usuario = JSON.parse(usuarioString);
+      return { token, usuario };
     } catch (error) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('usuario');
+      history.push('/iniciosesion');
+      return null;
+    }
+  };
+
+  const cargarConsultas = async () => {
+    const auth = verificarAutenticacion();
+    if (!auth) return;
+
+    try {
+      setLoading(true);
+      const response = await fetch(`http://localhost:3000/api/asesoramiento/consultas/${auth.usuario.id}`, {
+        headers: {
+          'Authorization': auth.token,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.status === 403) {
+        history.push('/iniciosesion');
+        return;
+      }
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.message || 'Error al cargar consultas');
+      }
+
+      setConsultas(data);
+      setError('');
+    } catch (error: any) {
       console.error('Error:', error);
-      setError('Error al cargar las consultas');
+      setError(error.message || 'Error al cargar las consultas');
+    } finally {
+      setLoading(false);
     }
   };
 
   const cargarHorariosDisponibles = async () => {
+    const auth = verificarAutenticacion();
+    if (!auth) return;
+
     try {
-      const response = await fetch('http://localhost:3000/api/asesoramiento/horarios');
-      if (!response.ok) throw new Error('Error al cargar horarios');
+      const response = await fetch('http://localhost:3000/api/asesoramiento/horarios', {
+        headers: {
+          'Authorization': auth.token,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.status === 403) {
+        history.push('/iniciosesion');
+        return;
+      }
+
       const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.message || 'Error al cargar horarios');
+      }
+
       setHorariosDisponibles(data);
-    } catch (error) {
+      setError('');
+    } catch (error: any) {
       console.error('Error:', error);
-      setError('Error al cargar los horarios disponibles');
+      setError(error.message || 'Error al cargar los horarios disponibles');
     }
   };
 
   const enviarConsulta = async () => {
-    const usuarioActual = localStorage.getItem('usuario')
-      ? JSON.parse(localStorage.getItem('usuario') || '{}')
-      : null;
-
-    if (!usuarioActual?.id) {
-      setError('Debes iniciar sesión para enviar una consulta');
-      return;
-    }
+    const auth = verificarAutenticacion();
+    if (!auth) return;
 
     if (!nuevaConsulta.tipo || !nuevaConsulta.descripcion || !nuevaConsulta.fechaHora) {
       setError('Por favor completa todos los campos');
@@ -79,22 +129,29 @@ const Asesoramiento: React.FC = () => {
     try {
       const response = await fetch('http://localhost:3000/api/asesoramiento', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Authorization': auth.token,
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
-          idUsuario: usuarioActual.id,
+          idUsuario: auth.usuario.id,
           ...nuevaConsulta
         })
       });
 
-      if (!response.ok) throw new Error('Error al enviar la consulta');
-      
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.message || 'Error al enviar la consulta');
+      }
+
       setMensaje('Tu consulta ha sido enviada exitosamente');
       setNuevaConsulta({ tipo: '', descripcion: '', fechaHora: '' });
       setIsModalOpen(false);
+      setError('');
       cargarConsultas();
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error:', error);
-      setError('Error al enviar la consulta');
+      setError(error.message || 'Error al enviar la consulta');
     }
   };
 
@@ -103,14 +160,14 @@ const Asesoramiento: React.FC = () => {
       <Head />
       <IonContent>
         <div className="asesoramiento-container">
-          <h2 className="asesoramiento-titulo">Asesoramiento Deportivo</h2>
+          <h2 style={{fontWeight: '600'}}className="asesoramiento-titulo">Asesoramiento Deportivo</h2>
           
           <div className="consultas-existentes">
-            <h3>Mis Consultas</h3>
+            <h3 style={{fontWeight: '600'}}>Mis Consultas</h3>
             {consultas.map((consulta) => (
               <IonCard key={consulta.idConsulta} className="consulta-card">
                 <IonCardHeader>
-                  <IonCardTitle>{consulta.tipo}</IonCardTitle>
+                  <IonCardTitle style={{fontWeight: '600'}}>{consulta.tipo}</IonCardTitle>
                   <IonCardSubtitle>
                     Fecha: {new Date(consulta.fechaHora).toLocaleString()}
                   </IonCardSubtitle>

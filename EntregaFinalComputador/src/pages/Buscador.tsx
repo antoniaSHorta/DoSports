@@ -62,7 +62,7 @@ const Buscador: React.FC = () => {
                     {resultados.map((resultado) => (
                         <IonCard key={`${resultado.tipo}-${resultado.id}`}>
                             <IonCardHeader>
-                                <IonCardTitle>{resultado.titulo}</IonCardTitle>
+                                <IonCardTitle style={{fontWeight: '600'}}>{resultado.titulo}</IonCardTitle>
                                 <IonLabel>{resultado.fecha}</IonLabel>
                             </IonCardHeader>
                             <IonCardContent>

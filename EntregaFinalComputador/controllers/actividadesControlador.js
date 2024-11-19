@@ -53,3 +53,29 @@ export const getActividad = (req, res) => {
         res.status(200).json(resultados[0]);
     });
 };
+
+export const cancelarInscripcion = (req, res) => {
+    const { idActividad, idUsuario } = req.params;
+    const conexion = req.app.get("dbConnection");
+
+    const verificarQuery = "SELECT * FROM insactividad WHERE idUsuario = ? AND idActividad = ?";
+    conexion.query(verificarQuery, [idUsuario, idActividad], (error, resultados) => {
+        if(error){
+            console.log("ERROR EN LA CONSULTA", error);
+            return res.status(500).json({message: "Error en el servidor"});
+        }
+        
+        if(!resultados || resultados.length === 0){
+            return res.status(404).json({message: "No se encontró la inscripción"});
+        }
+
+        const deleteQuery = "DELETE FROM insactividad WHERE idUsuario = ? AND idActividad = ?";
+        conexion.query(deleteQuery, [idUsuario, idActividad], (error) => {
+            if(error){
+                console.log("ERROR EN LA CONSULTA", error);
+                return res.status(500).json({message: "Error en el servidor"});
+            }
+            res.status(200).json({message: "Inscripción cancelada exitosamente"});
+        });
+    });
+};

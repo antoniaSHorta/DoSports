@@ -73,7 +73,7 @@ const Noticia: React.FC = () => {
                     {noticias.map((noticia) => (
                         <IonCard key={noticia.idNoticias}>
                             <IonCardHeader>
-                                <IonCardTitle>{noticia.title}</IonCardTitle>
+                                <IonCardTitle style={{fontWeight: '600'}}>{noticia.title}</IonCardTitle>
                                 <IonCardSubtitle>{new Date(noticia.date).toLocaleDateString()}</IonCardSubtitle>
                             </IonCardHeader>
                             <IonCardContent style={{color: 'black'}}>
@@ -81,8 +81,8 @@ const Noticia: React.FC = () => {
                                     <img alt={`Imagen de ${noticia.title}`} src={noticia.image} />
                                 </IonThumbnail>
                                 <p>{noticia.resumen}</p>
-                                <IonRouterLink  routerLink={`/noticias/${noticia.idNoticias}`}>
-                                    <IonButton  >Leer más</IonButton>
+                                <IonRouterLink   routerLink={`/noticias/${noticia.idNoticias}`}>
+                                    <IonButton>Leer más</IonButton>
                                 </IonRouterLink>
                             </IonCardContent>
                         </IonCard>
@@ -99,7 +99,7 @@ const Noticia: React.FC = () => {
             <IonContent>
                 <IonCard>
                     <IonCardHeader>
-                        <IonCardTitle>{noticia.title}</IonCardTitle>
+                        <IonCardTitle style={{fontWeight: '600'}}>{noticia.title}</IonCardTitle>
                         <IonCardSubtitle>{new Date(noticia.date).toLocaleDateString()}</IonCardSubtitle>
                     </IonCardHeader>
                     <IonCardContent>

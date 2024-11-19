@@ -44,7 +44,6 @@ export const crearConsulta = (req, res) => {
     const { idUsuario, tipo, descripcion, fechaHora } = req.body;
     const conexion = req.app.get("dbConnection");
     
-    // Primero verificamos si el horario sigue disponible
     const checkQuery = `
         SELECT disponible 
         FROM horarios_disponibles 
@@ -61,7 +60,7 @@ export const crearConsulta = (req, res) => {
             return res.status(400).json({message: "Horario no disponible"});
         }
         
-        // Si está disponible, creamos la consulta y actualizamos el horario
+    
         conexion.beginTransaction(err => {
             if(err) {
                 return res.status(500).json({message: "Error en el servidor"});

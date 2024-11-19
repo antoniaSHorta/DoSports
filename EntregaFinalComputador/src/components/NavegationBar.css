@@ -34,7 +34,6 @@
     line-height: 1.2;
   }
   
-  /* Tablets */
   @media (max-width: 768px) {
     .navigation-bar {
       height: 60px;
@@ -50,7 +49,6 @@
     }
   }
   
-  /* Móviles */
   @media (max-width: 480px) {
     .navigation-bar {
       height: 55px;
@@ -66,7 +64,6 @@
     }
   }
   
-  /* Móviles pequeños */
   @media (max-width: 320px) {
     .navigation-bar {
       height: 50px;
@@ -83,7 +80,6 @@
     }
   }
   
-  /* Estado activo */
   .nav-button.active {
     color: #3880ff;
   }

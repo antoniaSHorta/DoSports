@@ -14,6 +14,7 @@ import Cuenta from './pages/Cuenta';
 import Historial from './pages/Historial';
 import Asesoramiento from './pages/Asesoramiento';
 import ForoDetalle from './pages/ForoDetalle';
+import EditarCuenta from './pages/EditarCuenta';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -51,6 +52,7 @@ const App: React.FC = () => (
       <Route path="/asesoramiento" component={Asesoramiento} />
       <Route exact path="/foro" component={Foro} />
       <Route path="/foro/:idForo" component={ForoDetalle} />
+      <Route path="/editarcuenta" component={EditarCuenta} />
       
     </IonReactRouter>
   </IonApp>

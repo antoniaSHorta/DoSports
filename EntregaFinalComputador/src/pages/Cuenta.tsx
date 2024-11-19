@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonContent, IonPage, IonList, IonItem, IonButton, IonRouterLink, IonLabel, IonIcon } from '@ionic/react';
-import { timeOutline, helpCircleOutline,clipboardOutline,logOutOutline } from 'ionicons/icons';
+import { timeOutline, personOutline,helpCircleOutline,clipboardOutline,logOutOutline } from 'ionicons/icons';
 import Navbar from '../components/Navegationbar';
 import Head from '../components/HeadIcon';
 
@@ -8,6 +8,7 @@ import Head from '../components/HeadIcon';
 const Cuenta: React.FC = () => {
   const cerrarSesion = () => {
     localStorage.removeItem('usuario');
+    localStorage.removeItem('token');
     window.location.href = '/';
   };
 
@@ -17,6 +18,10 @@ const Cuenta: React.FC = () => {
       <IonContent>
         <div style={{marginTop:'10px'}}  className="cuenta-container">
           <IonList >
+            <IonItem className="cuenta-item" routerLink="/editarcuenta">
+                <IonIcon icon={personOutline} slot="start" className="cuenta-icon" />
+                <IonLabel>Editar Perfil</IonLabel>
+            </IonItem>
             <IonItem className="cuenta-item" routerLink="/historial">
               <IonIcon icon={timeOutline} slot="start" className="cuenta-icon" />
               <IonLabel>Historial de Actividades</IonLabel>

@@ -1,3 +1,4 @@
+// GET TODAS LAS NOTICIAS //
 export const getNoticias = (req, res) => {
     const conexion = req.app.get("dbConnection");
 
@@ -11,6 +12,7 @@ export const getNoticias = (req, res) => {
     });
 };
 
+// GET UNA NOTICIA //
 export const getNoticia = (req, res) => {
     const { id } = req.params;
     const conexion = req.app.get("dbConnection");
@@ -28,6 +30,7 @@ export const getNoticia = (req, res) => {
     });
 };
 
+// LAS NOTICIAS DESTACADAS //
 export const getNoticiasDestacadas = (req, res) => {
     const conexion = req.app.get("dbConnection");
     const query = "SELECT idNoticias, title, description, image, DATE_FORMAT(date, '%Y-%m-%d') as date, resumen FROM noticias ORDER BY date DESC LIMIT 3";

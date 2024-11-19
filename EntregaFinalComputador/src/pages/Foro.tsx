@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { IonPage, IonContent,IonCard,IonCardHeader,IonCardTitle,IonCardContent,IonButton,IonInput,IonTextarea,IonList,IonItem,IonLabel,IonFab,IonFabButton,IonIcon,IonModal,IonCardSubtitle,useIonRouter} from "@ionic/react";
+import { IonPage, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton } from "@ionic/react";
+import { useHistory } from 'react-router-dom';
 import Navbar from "../components/Navegationbar";
 import Head from '../components/HeadIcon';
 import './Foro.css';
@@ -14,7 +15,7 @@ const Foro: React.FC = () => {
   const [foros, setForos] = useState<Foro[]>([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
-  const router = useIonRouter();
+  const router = useHistory();
 
   useEffect(() => {
     cargarForos();
@@ -22,8 +23,25 @@ const Foro: React.FC = () => {
 
   const cargarForos = async () => {
     try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        router.push('/iniciosesion');
+        return;
+      }
+
       setLoading(true);
-      const response = await fetch('http://localhost:3000/api/foro/foros');
+      const response = await fetch('http://localhost:3000/api/foros', {
+        headers: {
+          'Authorization': token,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.status === 403) {
+        router.push('/iniciosesion');
+        return;
+      }
+
       if (!response.ok) throw new Error('Error al cargar foros');
       const data = await response.json();
       setForos(data);

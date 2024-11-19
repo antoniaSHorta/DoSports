@@ -23,8 +23,18 @@ const Actividad: React.FC = () => {
     useEffect(() => {
         const fetchActividad = async () => {
             try {
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    throw new Error('No hay token disponible');
+                }
+
                 setLoading(true);
-                const response = await fetch(`http://localhost:3000/api/actividades/${id}`);
+                const response = await fetch(`http://localhost:3000/api/actividades/${id}`, {
+                    headers: {
+                        'Authorization': token,
+                        'Content-Type': 'application/json'
+                    }
+                });
                 if (!response.ok) {
                     throw new Error('Actividad no encontrada');
                 }
@@ -43,8 +53,9 @@ const Actividad: React.FC = () => {
     const handleInscribirse = async () => {
         const usuarioActual = localStorage.getItem('usuario');
         const idUsuario = usuarioActual ? JSON.parse(usuarioActual).id : null;
+        const token = localStorage.getItem('token');
     
-        if (!idUsuario) {
+        if (!idUsuario || !token) {
             setMensaje('Debes iniciar sesión para inscribirte');
             setTipoMensaje('error');
             return;
@@ -54,7 +65,10 @@ const Actividad: React.FC = () => {
             try {
                 const response = await fetch('http://localhost:3000/api/actividades/inscribir', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 
+                        'Authorization': token,
+                        'Content-Type': 'application/json' 
+                    },
                     body: JSON.stringify({ 
                         idUsuario: idUsuario, 
                         idActividad: actividad.idActividad 
@@ -76,29 +90,6 @@ const Actividad: React.FC = () => {
             }
         }
     };
-    if (loading) {
-        return (
-            <IonPage>
-                <Head />
-                <IonContent>
-                    <h2>Cargando...</h2>
-                </IonContent>
-                <Navbar />
-            </IonPage>
-        );
-    }
-
-    if (!actividad) {
-        return (
-            <IonPage>
-                <Head />
-                <IonContent>
-                    <h2>Actividad no encontrada o finalizada</h2>
-                </IonContent>
-                <Navbar />
-            </IonPage>
-        );
-    }
 
     return (
         <IonPage>
@@ -106,13 +97,13 @@ const Actividad: React.FC = () => {
             <IonContent>
                 <IonCard>
                     <IonCardHeader>
-                        <IonCardTitle>{actividad?.nombreActividad}</IonCardTitle>
+                        <IonCardTitle style={{fontWeight: '600'}}>{actividad?.nombreActividad}</IonCardTitle>
                         <IonCardSubtitle>{actividad?.fechaActividad}</IonCardSubtitle>
                     </IonCardHeader>
                     <IonCardContent style={{color: 'black'}}>
                         <p>{actividad?.descripcion}</p>
                         <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px' }}>
-                            <IonButton onClick={handleInscribirse}>Inscribirme</IonButton>
+                            <IonButton onClick={handleInscribirse}>Inscribir</IonButton>
                         </div>
                     </IonCardContent>
                 </IonCard>

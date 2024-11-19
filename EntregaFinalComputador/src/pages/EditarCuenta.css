@@ -1,0 +1,77 @@
+.editar-cuenta-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.editar-cuenta-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.mensaje-error,
+.mensaje-exito {
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.mensaje-error {
+    background-color: rgba(var(--ion-color-danger-rgb), 0.1);
+}
+
+.mensaje-exito {
+    background-color: rgba(var(--ion-color-success-rgb), 0.1);
+}
+
+form {
+    margin-top: 20px;
+}
+
+ion-item {
+    margin-bottom: 10px;
+}
+
+ion-button {
+    margin-top: 20px;
+}.editar-cuenta-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.editar-cuenta-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.mensaje-error,
+.mensaje-exito {
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.mensaje-error {
+    background-color: rgba(var(--ion-color-danger-rgb), 0.1);
+}
+
+.mensaje-exito {
+    background-color: rgba(var(--ion-color-success-rgb), 0.1);
+}
+
+form {
+    margin-top: 20px;
+}
+
+ion-item {
+    margin-bottom: 10px;
+}
+
+ion-button {
+    margin-top: 20px;
+}

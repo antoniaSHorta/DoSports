@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
-import { IonPage, IonContent,IonCard,IonCardHeader,IonCardTitle,IonCardContent,IonButton,IonInput,IonTextarea,IonList,IonItem,IonLabel,IonFab,IonFabButton,IonIcon,IonModal,IonCardSubtitle,useIonRouter} from "@ionic/react";
+import { IonPage, IonContent,IonCard,IonCardHeader,IonCardTitle,IonCardContent,IonButton,IonInput,IonTextarea,IonItem,IonLabel,IonFab,IonFabButton,IonIcon,IonModal,IonCardSubtitle} from "@ionic/react";
 import { add, chatbubbleOutline } from 'ionicons/icons';
 import Navbar from "../components/Navegationbar";
 import Head from '../components/HeadIcon';
@@ -44,8 +44,19 @@ interface Post {
   
     const cargarPosts = async () => {
       try {
+        const token = localStorage.getItem('token');
+        if (!token) {
+          setError('Sesión expirada');
+          return;
+        }
+
         setLoading(true);
-        const response = await fetch(`http://localhost:3000/api/foro/foros/${idForo}/posts`);
+        const response = await fetch(`http://localhost:3000/api/foros/${idForo}/posts`, {
+          headers: {
+            'Authorization': token,
+            'Content-Type': 'application/json'
+          }
+        });
         if (!response.ok) throw new Error('Error al cargar posts');
         const data = await response.json();
         setPosts(data);
@@ -59,7 +70,18 @@ interface Post {
   
     const cargarComentarios = async (idPublicacion: number) => {
       try {
-        const response = await fetch(`http://localhost:3000/api/foro/comentarios/${idPublicacion}`);
+        const token = localStorage.getItem('token');
+        if (!token) {
+          setError('Sesión expirada');
+          return;
+        }
+
+        const response = await fetch(`http://localhost:3000/api/comentarios/${idPublicacion}`, {
+          headers: {
+            'Authorization': token,
+            'Content-Type': 'application/json'
+          }
+        });
         if (!response.ok) throw new Error('Error al cargar comentarios');
         const data = await response.json();
         setComentarios(prev => ({
@@ -71,20 +93,25 @@ interface Post {
         setError('Error al cargar los comentarios');
       }
     };
-  
+    
+    // CREAR UN POST EN EL FORO //
     const crearPost = async () => {
       const usuarioActual = localStorage.getItem('usuario');
       const idUsuario = usuarioActual ? JSON.parse(usuarioActual).id : null;
-  
-      if (!idUsuario) {
+      const token = localStorage.getItem('token');
+
+      if (!idUsuario || !token) {
         setError('Debes iniciar sesión para publicar');
         return;
       }
   
       try {
-        const response = await fetch('http://localhost:3000/api/foro/posts', {
+        const response = await fetch('http://localhost:3000/api/posts', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Authorization': token,
+            'Content-Type': 'application/json' 
+          },
           body: JSON.stringify({
             ...nuevoPost,
             idUsuario,
@@ -102,20 +129,25 @@ interface Post {
         setError('Error al crear el post');
       }
     };
-  
+    
+    // CREAR UN COMENTARIO EN EL FORO //
     const crearComentario = async (idPublicacion: number) => {
       const usuarioActual = localStorage.getItem('usuario');
       const idUsuario = usuarioActual ? JSON.parse(usuarioActual).id : null;
-  
-      if (!idUsuario) {
+      const token = localStorage.getItem('token');
+
+      if (!idUsuario || !token) {
         setError('Debes iniciar sesión para comentar');
         return;
       }
   
       try {
-        const response = await fetch('http://localhost:3000/api/foro/comentarios', {
+        const response = await fetch('http://localhost:3000/api/comentarios', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Authorization': token,
+            'Content-Type': 'application/json' 
+          },
           body: JSON.stringify({
             contenido: nuevoComentario,
             idUsuario,
@@ -254,7 +286,7 @@ interface Post {
                   >
                     Publicar
                   </IonButton>
-                  <IonButton 
+                  <IonButton style={{color:'red'}} 
                     expand="block" 
                     fill="clear" 
                     onClick={() => setIsModalOpen(false)}

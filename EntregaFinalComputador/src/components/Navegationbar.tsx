@@ -14,7 +14,7 @@ function Navbar() {
       case '/noticias':
         return location.pathname === '/noticias' || location.pathname.startsWith('/noticia'); 
       case '/cuenta':
-        return location.pathname === '/cuenta'|| location.pathname.startsWith('/asesoramiento')|| location.pathname.startsWith('/historial'); 
+        return location.pathname === '/cuenta'|| location.pathname.startsWith('/asesoramiento')|| location.pathname.startsWith('/historial')|| location.pathname.startsWith('/editarcuenta'); 
       case '/foro': 
       return location.pathname === '/foro'|| location.pathname.startsWith('/foro');
         
