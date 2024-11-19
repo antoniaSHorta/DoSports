@@ -4,14 +4,8 @@ import bodyparser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 
-// IMPORTAR RUTAS DE AUTENTICACION
-import autenticacionRutas from './routes/autenticacionRutas.js';
-import actividadesRutas from './routes/actividadesRutas.js';
-import busquedaRutas from './routes/busquedaRutas.js';
-import noticiasRutas from './routes/noticiasRutas.js';
-import foroRutas from './routes/foroRutas.js';
-import historialRutas from './routes/historialRutas.js';
-import asesoramientoRutas from './routes/asesoramientoRutas.js';
+// IMPORTAR RUTAS 
+import rutas from './routes/rutas.js';
 
 
 dotenv.config();
@@ -49,13 +43,8 @@ conexion.connect((error)=>{
 
 
 app.set("dbConnection",conexion);
-app.use('/api/autenticacion', autenticacionRutas);
-app.use('/api', actividadesRutas);
-app.use('/api', busquedaRutas);
-app.use('/api/noticias', noticiasRutas);
-app.use('/api/foro', foroRutas);
-app.use('/api', historialRutas);
-app.use('/api', asesoramientoRutas);
+
+app.use('/api', rutas);
 
 
 
